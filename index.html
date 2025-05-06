@@ -39,47 +39,112 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Adding animated elements to enhance visual appeal */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
     
     /* Header Styles */
     header {
-      background: linear-gradient(135deg, #00c896 0%, #0066cc 100%);
+      background: linear-gradient(90deg, #00d4a0 0%, #0077ee 100%);
       color: white;
-      padding: 2rem 0;
+      padding: 4rem 0 2rem;
       text-align: center;
       position: relative;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+    
+    /* Adding decorative elements */
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 2;
     }
     
     .logo-container {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .logo {
-      height: 60px;
+      height: 70px;
       width: auto;
-      margin-right: 15px;
+      margin-right: 20px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     }
     
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #005e46 0%, #004080 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
     
     .tagline {
-      font-size: 1.2rem;
-      font-weight: 300;
-      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 1.5rem 0;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
     
     /* Navigation */
     nav {
-      background-color: rgba(0, 0, 0, 0.1);
-      padding: 10px 0;
+      background-color: rgba(0, 0, 0, 0.15);
+      padding: 15px 0;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     nav ul {
@@ -89,78 +154,111 @@
     }
     
     nav ul li {
-      margin: 0 15px;
+      margin: 0 25px;
     }
     
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 1.1rem;
       transition: all 0.3s ease;
+      padding: 8px 15px;
+      border-radius: 30px;
     }
     
     nav ul li a:hover {
-      color: #00c896;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transform: translateY(-2px);
     }
     
     /* Services Section */
     .services {
-      padding: 4rem 0;
+      padding: 5rem 0;
       background-color: white;
+      position: relative;
     }
     
     .services h2 {
       text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
       color: #333;
       position: relative;
+      font-weight: 700;
     }
     
-    .services h2:after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: #00c896;
-      margin: 15px auto;
+    .service-underline {
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #00d4a0 0%, #0077ee 100%);
+      margin: 0 auto 3rem;
+      border-radius: 2px;
     }
     
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
       margin-top: 2rem;
     }
     
     .service-card {
-      background: #f8f9fa;
-      border-radius: 8px;
-      padding: 1.5rem;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
     
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0);
+    }
+    
+    .service-hover-effect {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 212, 160, 0.05) 0%, rgba(0, 119, 238, 0.05) 100%);
+      z-index: -1;
+      transition: all 0.5s ease;
+    }
+    
+    .service-card:hover .service-hover-effect {
+      top: 0;
     }
     
     .service-icon {
-      font-size: 2.5rem;
-      color: #00c896;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulse 3s infinite ease-in-out;
     }
     
     .service-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #222;
+      font-weight: 600;
     }
     
     .service-card p {
       color: #666;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      line-height: 1.7;
     }
     
     /* Gallery Section */
@@ -393,14 +491,38 @@
       font-size: 0.9rem;
     }
     
+    /* Animation styles */
+    .pre-animation {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    
+    .animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
     /* Responsive styles */
     @media (max-width: 768px) {
+      header {
+        padding: 3rem 0 1.5rem;
+      }
+      
       header h1 {
         font-size: 2rem;
       }
       
       .tagline {
         font-size: 1rem;
+      }
+      
+      .logo-container {
+        padding: 10px 20px;
+      }
+      
+      .logo {
+        height: 50px;
       }
       
       nav ul {
@@ -416,31 +538,56 @@
       .photos {
         grid-template-columns: 1fr;
       }
+      
+      .services h2,
+      .gallery h2,
+      .about h2,
+      .contact h2 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo-container {
+        flex-direction: column;
+      }
+      
+      .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <div class="logo-container">
-        <img src="images/logo.png" alt="Udayam AI Labs Logo" class="logo">
-        <h1>Udayam AI Labs</h1>
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="images/logo.png" alt="Udayam AI Labs Logo" class="logo">
+          <h1>Udayam AI Labs</h1>
+        </div>
+        <p class="tagline">Learn and build AI-powered solutions</p>
+        <nav>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Training</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-      <p class="tagline">Learn and build AI-powered solutions</p>
-      <nav>
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Training</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
   <section id="services" class="services">
     <div class="container">
       <h2>Our Services</h2>
+      <div class="service-underline"></div>
       <div class="service-grid">
         <div class="service-card">
           <div class="service-icon">
@@ -448,6 +595,7 @@
           </div>
           <h3>School AI Education</h3>
           <p>Introducing AI concepts to young minds through interactive, age-appropriate learning experiences and hands-on projects.</p>
+          <div class="service-hover-effect"></div>
         </div>
         
         <div class="service-card">
@@ -456,6 +604,7 @@
           </div>
           <h3>University/College AI Education</h3>
           <p>Advanced AI training programs aligned with academic curricula to prepare students for cutting-edge careers in technology.</p>
+          <div class="service-hover-effect"></div>
         </div>
         
         <div class="service-card">
@@ -464,6 +613,7 @@
           </div>
           <h3>Corporate AI Training</h3>
           <p>Customized workshops and training sessions to equip professionals with AI skills relevant to their industry and role.</p>
+          <div class="service-hover-effect"></div>
         </div>
         
         <div class="service-card">
@@ -472,6 +622,7 @@
           </div>
           <h3>AI Solutions Design</h3>
           <p>Custom AI-powered solutions including chatbots, automation tools, and domain-specific generative AI applications.</p>
+          <div class="service-hover-effect"></div>
         </div>
       </div>
     </div>
@@ -600,6 +751,27 @@
           top: targetElement.offsetTop,
           behavior: 'smooth'
         });
+      });
+    });
+
+    // Add animation classes to elements when they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.service-card, .photo-card, .about-content p');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+      
+      animatedElements.forEach(element => {
+        observer.observe(element);
+        element.classList.add('pre-animation');
       });
     });
   </script>
