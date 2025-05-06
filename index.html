@@ -11,76 +11,597 @@
   <meta property="og:image" content="https://udayam-ai-labs.github.io/assets/banner.png" />
   <meta property="og:url" content="https://udayam-ai-labs.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="stylesheet" href="assets/style.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, #00c896 0%, #0066cc 100%);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .logo {
+      height: 60px;
+      width: auto;
+      margin-right: 15px;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin: 0 15px;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+      color: #00c896;
+    }
+    
+    /* Services Section */
+    .services {
+      padding: 4rem 0;
+      background-color: white;
+    }
+    
+    .services h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #333;
+      position: relative;
+    }
+    
+    .services h2:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #00c896;
+      margin: 15px auto;
+    }
+    
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .service-card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-icon {
+      font-size: 2.5rem;
+      color: #00c896;
+      margin-bottom: 1rem;
+    }
+    
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .service-card p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    /* Gallery Section */
+    .gallery {
+      background-color: #f8f9fa;
+      padding: 4rem 0;
+    }
+    
+    .gallery h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #333;
+      position: relative;
+    }
+    
+    .gallery h2:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #00c896;
+      margin: 15px auto;
+    }
+    
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .photo-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .photo-card:hover {
+      transform: scale(1.03);
+    }
+    
+    .photo-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .photo-info {
+      padding: 1rem;
+      background: white;
+    }
+    
+    .photo-info h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .photo-info p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+    
+    /* About Section */
+    .about {
+      padding: 4rem 0;
+      background-color: white;
+    }
+    
+    .about h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #333;
+      position: relative;
+    }
+    
+    .about h2:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #00c896;
+      margin: 15px auto;
+    }
+    
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+    
+    .about-content p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Contact Section */
+    .contact {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, #222 0%, #444 100%);
+      color: white;
+    }
+    
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      position: relative;
+    }
+    
+    .contact h2:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #00c896;
+      margin: 15px auto;
+    }
+    
+    .contact-intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: none;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.3);
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #00c896;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background: #00b385;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .contact-info {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    
+    .contact-info a {
+      color: #00c896;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-info a:hover {
+      color: #00e0aa;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #999;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .social-links {
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-links a {
+      color: #999;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #00c896;
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .tagline {
+        font-size: 1rem;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav ul li {
+        margin: 5px 0;
+      }
+      
+      .service-grid,
+      .photos {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Udayam AI Labs Logo" class="logo">
-    <h1>Udayam AI Labs</h1>
-    <p class="tagline">Learn and build AI-powered solutions</p>
+    <div class="container">
+      <div class="logo-container">
+        <img src="images/logo.png" alt="Udayam AI Labs Logo" class="logo">
+        <h1>Udayam AI Labs</h1>
+      </div>
+      <p class="tagline">Learn and build AI-powered solutions</p>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Training</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>📘 School AI Education</li>
-      <li>🎓 University/College AI Education</li>
-      <li>🏢 Corporate AI Training</li>
-      <li>🛠️ Designing AI-powered Solutions</li>
-    </ul>
-  </section>
-
-  <section class="gallery">
-    <h2>Training Highlights</h2>
-    <div class="photos">
-      <img src="images/training1.jpg" alt="Training session 1" />
-      <img src="images/training2.jpg" alt="Training session 2" />
-      <img src="images/training3.jpg" alt="Training session 3" />
-	  <img src="images/training4.jpg" alt="Training session 4" />
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-school"></i>
+          </div>
+          <h3>School AI Education</h3>
+          <p>Introducing AI concepts to young minds through interactive, age-appropriate learning experiences and hands-on projects.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>University/College AI Education</h3>
+          <p>Advanced AI training programs aligned with academic curricula to prepare students for cutting-edge careers in technology.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Corporate AI Training</h3>
+          <p>Customized workshops and training sessions to equip professionals with AI skills relevant to their industry and role.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>AI Solutions Design</h3>
+          <p>Custom AI-powered solutions including chatbots, automation tools, and domain-specific generative AI applications.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="about" style="padding: 4em 2em; background: #f9f9f9;">
-	<div class="container">
-	  <h2 style="text-align: center;">About Udayam.AI Labs</h2>
-	  <p style="max-width: 800px; margin: 1em auto; text-align: center;">
-At Udayam AI Labs, we are committed to empowering the next generation of thinkers, creators, and innovators through cutting-edge AI education and technology solutions. Founded with a vision to bridge the gap between academic learning and real-world application, we provide comprehensive training, resources, and expert guidance tailored for students, educators, and professionals alike.
-Our programs are thoughtfully designed to demystify artificial intelligence, making it both accessible and practical for learners at every stage. We collaborate with schools, colleges, universities, and corporations to deliver impactful workshops, hands-on coding sessions, and industry-aligned courses in AI and data science.
-To make learning fun and effective, we integrate innovative tools like PictoBlox, enabling school students to build essential coding and logical thinking skills in an interactive environment. Our mission is to create a strong foundation for future careers in technology, while nurturing creativity and problem-solving abilities.
-We are proud to announce our partnership with STEMpedia, a globally recognized leader in STEM education. Through this collaboration, we bring a world-class AI curriculum and ensure its effective implementation in schools through engaging, project-based learning experiences.
-Beyond education, Udayam AI Labs also develops custom AI solutions for businesses and institutions. Our expertise includes the creation of custom GPTs, AI-powered chatbots, intelligent automation tools, and domain-specific generative AI applications. These solutions are built to address unique needs, streamline processes, and enhance engagement across sectors.
-Driven by a passion for technology and learning, Udayam AI Labs is your trusted partner in unlocking potential through innovation — learning, building, and growing with AI.
-	  </p>
-	</div>
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h2>Training Highlights</h2>
+      <div class="photos">
+        <div class="photo-card">
+          <img src="images/training1.jpg" alt="Training session 1" />
+          <div class="photo-info">
+            <h3>Hands-on AI Workshop</h3>
+            <p>Students learning practical AI implementation through guided exercises.</p>
+          </div>
+        </div>
+        
+        <div class="photo-card">
+          <img src="images/training2.jpg" alt="Training session 2" />
+          <div class="photo-info">
+            <h3>Corporate Training</h3>
+            <p>Professionals enhancing their AI skills in an interactive setting.</p>
+          </div>
+        </div>
+        
+        <div class="photo-card">
+          <img src="images/training3.jpg" alt="Training session 3" />
+          <div class="photo-info">
+            <h3>School Initiative</h3>
+            <p>Introducing young learners to the world of artificial intelligence.</p>
+          </div>
+        </div>
+        
+        <div class="photo-card">
+          <img src="images/training4.jpg" alt="Training session 4" />
+          <div class="photo-info">
+            <h3>Advanced Techniques</h3>
+            <p>Exploring cutting-edge AI methodologies with our expert trainers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Udayam AI Labs</h2>
+      <div class="about-content">
+        <p>
+          At Udayam AI Labs, we are committed to empowering the next generation of thinkers, creators, and innovators through cutting-edge AI education and technology solutions. Founded with a vision to bridge the gap between academic learning and real-world application, we provide comprehensive training, resources, and expert guidance tailored for students, educators, and professionals alike.
+        </p>
+        <p>
+          Our programs are thoughtfully designed to demystify artificial intelligence, making it both accessible and practical for learners at every stage. We collaborate with schools, colleges, universities, and corporations to deliver impactful workshops, hands-on coding sessions, and industry-aligned courses in AI and data science.
+        </p>
+        <p>
+          To make learning fun and effective, we integrate innovative tools like PictoBlox, enabling school students to build essential coding and logical thinking skills in an interactive environment. Our mission is to create a strong foundation for future careers in technology, while nurturing creativity and problem-solving abilities.
+        </p>
+        <p>
+          We are proud to announce our partnership with STEMpedia, a globally recognized leader in STEM education. Through this collaboration, we bring a world-class AI curriculum and ensure its effective implementation in schools through engaging, project-based learning experiences.
+        </p>
+        <p>
+          Beyond education, Udayam AI Labs also develops custom AI solutions for businesses and institutions. Our expertise includes the creation of custom GPTs, AI-powered chatbots, intelligent automation tools, and domain-specific generative AI applications. These solutions are built to address unique needs, streamline processes, and enhance engagement across sectors.
+        </p>
+        <p>
+          Driven by a passion for technology and learning, Udayam AI Labs is your trusted partner in unlocking potential through innovation — learning, building, and growing with AI.
+        </p>
+      </div>
+    </div>
   </section>
   
-  <section id="contact" style="padding: 4em 2em; background: #222; color: #fff;">
-	<div class="container">
-	  <h2 style="text-align: center;">Contact Us</h2>
-	  <p style="text-align: center;">We’d love to hear from you!</p>
-	  <div style="max-width: 600px; margin: 2em auto;">
-		<form action="https://formspree.io/f/your-form-id" method="POST">
-		  <label for="name">Name</label><br>
-		  <input type="text" name="name" id="name" required style="width: 100%; padding: 0.5em;"><br><br>
-  
-		  <label for="email">Email</label><br>
-		  <input type="email" name="email" id="email" required style="width: 100%; padding: 0.5em;"><br><br>
-  
-		  <label for="message">Message</label><br>
-		  <textarea name="message" id="message" rows="5" required style="width: 100%; padding: 0.5em;"></textarea><br><br>
-  
-		  <button type="submit" style="padding: 0.7em 2em; background: #00c896; color: #fff; border: none; cursor: pointer;">Send</button>
-		</form>
-	  </div>
-	  <p style="text-align: center; margin-top: 2em;">
-		📧 <a href="mailto:udayam.ailabs@gmail.com" style="color: #00c896;">udayam.ailabs@gmail.com</a> &nbsp;|&nbsp; 📞 +91-8600302429
-	  </p>
-	</div>
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p class="contact-intro">We'd love to hear from you!</p>
+      <div class="contact-form">
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" class="form-control" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <p>
+          <i class="fas fa-envelope"></i> <a href="mailto:udayam.ailabs@gmail.com">udayam.ailabs@gmail.com</a> &nbsp;|&nbsp; 
+          <i class="fas fa-phone"></i> +91-8600302429
+        </p>
+      </div>
+    </div>
   </section>
   
   <footer>
-    <p>&copy; 2025 Udayam AI Labs. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="copyright">&copy; 2025 Udayam AI Labs. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
