@@ -362,6 +362,131 @@
       margin-bottom: 0;
     }
     
+    /* Team Section */
+    .team {
+      padding: 4rem 0;
+      background-color: #f8f9fa;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #333;
+      position: relative;
+      font-weight: 700;
+    }
+    
+    .section-divider {
+      width: 80px;
+      height: 3px;
+      background: #00c896;
+      margin: 15px auto;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    
+    .team-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      height: 100%;
+    }
+    
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-img img {
+      border: 5px solid rgba(0, 200, 150, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .team-card:hover .team-img img {
+      border-color: rgba(0, 200, 150, 0.3);
+    }
+    
+    .team-info h4 {
+      color: #222;
+      font-size: 1.4rem;
+      margin-top: 1rem;
+    }
+    
+    .team-social a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      background: rgba(0, 200, 150, 0.1);
+      color: #00c896;
+      border-radius: 50%;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .team-social a:hover {
+      background: #00c896;
+      color: white;
+      transform: scale(1.1);
+    }
+    
+    /* Partners Section */
+    .partners {
+      padding: 4rem 0;
+      background-color: white;
+    }
+    
+    .partner-card {
+      background: white;
+      border-radius: 12px;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .partner-card img {
+      transition: all 0.3s ease;
+      filter: grayscale(30%);
+    }
+    
+    .partner-card:hover img {
+      filter: grayscale(0%);
+    }
+    
+    .partner-card h5 {
+      color: #333;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    
+    .border.dashed {
+      border-style: dashed !important;
+    }
+    
+    .placeholder-image {
+      background-color: rgba(0, 0, 0, 0.03);
+      border-radius: 8px;
+    }
+    
     /* Contact Section */
     .contact {
       padding: 4rem 0;
@@ -542,7 +667,8 @@
       .services h2,
       .gallery h2,
       .about h2,
-      .contact h2 {
+      .contact h2,
+      .section-title {
         font-size: 2rem;
       }
     }
@@ -577,6 +703,8 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#gallery">Training</a></li>
             <li><a href="#about">About Us</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#partners">Partners</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -692,88 +820,60 @@
       </div>
     </div>
   </section>
-  
-  <section id="contact" class="contact">
+
+  <!-- Meet Our Team Section -->
+  <section id="team" class="team">
     <div class="container">
-      <h2>Contact Us</h2>
-      <p class="contact-intro">We'd love to hear from you!</p>
-      <div class="contact-form">
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" required>
+      <h2 class="section-title">Meet Our Team</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">The talented individuals behind our success</p>
+      <div class="row">
+        <!-- Founder -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="team-card text-center">
+            <div class="team-img mb-3">
+              <img src="images/founder.png" alt="Udayraj Patare" class="img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+            </div>
+            <div class="team-info">
+              <h4 class="mb-0">Udayraj Patare</h4>
+              <p class="text-muted">Founder & Managing Director</p>
+              <div class="team-social mt-3">
+                <a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
           </div>
-          
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="form-control" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" rows="5" class="form-control" required></textarea>
-          </div>
-          
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-      </div>
-      <div class="contact-info">
-        <p>
-          <i class="fas fa-envelope"></i> <a href="mailto:udayam.ailabs@gmail.com">udayam.ailabs@gmail.com</a> &nbsp;|&nbsp; 
-          <i class="fas fa-phone"></i> +91-8600302429
-        </p>
-      </div>
-    </div>
-  </section>
-  
-  <footer>
-    <div class="footer-content">
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-      <p class="copyright">&copy; 2025 Udayam AI Labs. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+        </div>
         
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+        <!-- Co-founder -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="team-card text-center">
+            <div class="team-img mb-3">
+              <img src="images/cofounder.png" alt="Sarthak Sathu" class="img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+            </div>
+            <div class="team-info">
+              <h4 class="mb-0">Sarthak Sathu</h4>
+              <p class="text-muted">Co-founder</p>
+              <div class="team-social mt-3">
+                <a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
         
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Add animation classes to elements when they come into view
-    document.addEventListener('DOMContentLoaded', function() {
-      const animatedElements = document.querySelectorAll('.service-card, .photo-card, .about-content p');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.2
-      });
-      
-      animatedElements.forEach(element => {
-        observer.observe(element);
-        element.classList.add('pre-animation');
-      });
-    });
-  </script>
-</body>
-</html>
+        <!-- AI Engineer -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="team-card text-center">
+            <div class="team-img mb-3">
+              <img src="images/intern1.png" alt="Pravin Raut" class="img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+            </div>
+            <div class="team-info">
+              <h4 class="mb-0">Pravin Raut</h4>
+              <p class="text-muted">Generative AI Engineer</p>
+              <div class="team-social mt-3">
+                <a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="far
