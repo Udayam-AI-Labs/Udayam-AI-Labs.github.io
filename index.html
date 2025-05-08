@@ -877,91 +877,91 @@
                 <a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
                 <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="far
-					<section id="contact" class="contact">
-						<div class="container">
-						  <h2>Contact Us</h2>
-						  <p class="contact-intro">We'd love to hear from you!</p>
-						  
-						  <div class="contact-form">
-							<form action="https://formspree.io/f/your-form-id" method="POST">
-							  <div class="form-group">
-								<label for="name">Name</label>
-								<input type="text" name="name" id="name" class="form-control" required>
-							  </div>
-					  
-							  <div class="form-group">
-								<label for="email">Email</label>
-								<input type="email" name="email" id="email" class="form-control" required>
-							  </div>
-					  
-							  <div class="form-group">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" rows="5" class="form-control" required></textarea>
-							  </div>
-					  
-							  <button type="submit" class="btn">Send Message</button>
-							</form>
-						  </div>
-					  
-						  <div class="contact-info">
-							<p>
-							  <i class="fas fa-envelope"></i> 
-							  <a href="mailto:udayam.ailabs@gmail.com">udayam.ailabs@gmail.com</a> &nbsp;|&nbsp; 
-							  <i class="fas fa-phone"></i> +91-8600302429
-							</p>
-						  </div>
-						</div>
-					  </section>
-					  
-					  <footer>
-						<div class="footer-content">
-						  <div class="social-links">
-							<a href="#"><i class="fab fa-facebook"></i></a>
-							<a href="#"><i class="fab fa-twitter"></i></a>
-							<a href="#"><i class="fab fa-linkedin"></i></a>
-							<a href="#"><i class="fab fa-instagram"></i></a>
-						  </div>
-						  <p class="copyright">&copy; 2025 Udayam AI Labs. All rights reserved.</p>
-						</div>
-					  </footer>
-					  
-					  <script>
-						// Smooth scrolling for navigation links
-						document.querySelectorAll('nav a').forEach(anchor => {
-						  anchor.addEventListener('click', function(e) {
-							e.preventDefault();
-					  
-							const targetId = this.getAttribute('href');
-							const targetElement = document.querySelector(targetId);
-					  
-							window.scrollTo({
-							  top: targetElement.offsetTop,
-							  behavior: 'smooth'
-							});
-						  });
-						});
-					  
-						// Add animation classes to elements when they come into view
-						document.addEventListener('DOMContentLoaded', function() {
-						  const animatedElements = document.querySelectorAll('.service-card, .photo-card, .about-content p');
-					  
-						  const observer = new IntersectionObserver((entries) => {
-							entries.forEach(entry => {
-							  if (entry.isIntersecting) {
-								entry.target.classList.add('animate-in');
-								observer.unobserve(entry.target);
-							  }
-							});
-						  }, {
-							threshold: 0.2
-						  });
-					  
-						  animatedElements.forEach(element => {
-							observer.observe(element);
-							element.classList.add('pre-animation');
-						  });
-						});
-					  </script>
-					  </body>
-					  </html>
-					  
+					/* CONTACT SECTION STYLES */
+					.contact {
+					  padding: 60px 20px;
+					  background-color: #f9f9f9;
+					  text-align: center;
+					}
+					
+					.contact h2 {
+					  font-size: 2em;
+					  margin-bottom: 10px;
+					}
+					
+					.contact-intro {
+					  font-size: 1.1em;
+					  margin-bottom: 30px;
+					  max-width: 600px;
+					  margin-left: auto;
+					  margin-right: auto;
+					  line-height: 1.5;
+					  color: #333;
+					}
+					
+					.contact-form {
+					  max-width: 600px;
+					  margin: 0 auto 40px;
+					  text-align: left;
+					}
+					
+					.form-group {
+					  margin-bottom: 20px;
+					}
+					
+					.form-group label {
+					  display: block;
+					  font-weight: bold;
+					  margin-bottom: 5px;
+					}
+					
+					.form-control {
+					  width: 100%;
+					  padding: 10px;
+					  font-size: 1em;
+					  border-radius: 5px;
+					  border: 1px solid #ccc;
+					  box-sizing: border-box;
+					}
+					
+					.btn {
+					  padding: 10px 20px;
+					  background-color: #00b894;
+					  color: #fff;
+					  border: none;
+					  border-radius: 5px;
+					  cursor: pointer;
+					}
+					
+					.btn:hover {
+					  background-color: #019875;
+					}
+					
+					.contact-info p {
+					  font-size: 1em;
+					  color: #333;
+					}
+					
+					.contact-info a {
+					  color: #00b894;
+					  text-decoration: none;
+					}
+					
+					.contact-info a:hover {
+					  text-decoration: underline;
+					}
+					
+					/* SOCIAL ICONS IN FOOTER */
+					.footer-content {
+					  padding: 20px;
+					  background-color: #222;
+					  color: white;
+					  text-align: center;
+					}
+					
+					.social-links a {
+					  margin: 0 10px;
+					  color: white;
+					  font-size: 1.5em;
+					}
+					
