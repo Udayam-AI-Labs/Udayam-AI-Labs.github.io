@@ -139,31 +139,34 @@
     /* Navigation */
     nav {
       background-color: rgba(0, 0, 0, 0.15);
-      padding: 15px 0;
+      padding: 16px; /* Without padding on the sides, child elements could extend beyond the edges. The impact would only be noticeable on small devices. */
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
       margin-top: 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);      
     }
     
     nav ul {
+      width: 100%; /* Originally, the <ul> tag is an element that may not respect the width of its parent, so in cases like ours, it is expanding. Using the width: 100% property forces the list of links to rearrange itself and not overflow. */
       display: flex;
       justify-content: center;
+      justify-content: space-between; /* When we remove the margins from the <li> elements, their children <a> gather in a single point, so to separate them, I modify their horizontal layout.*/
       list-style: none;
     }
+
     
     nav ul li {
-      margin: 0 25px;
+      /* The margins of the <li> elements added extra space, causing their parent <ul> to be wider. */
     }
     
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 1.1rem;
       transition: all 0.3s ease;
-      padding: 8px 15px;
+      padding: 8px 12px;
       border-radius: 30px;
     }
     
