@@ -21,6 +21,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
+    html{
+      scroll-behavior: smooth;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -139,31 +143,34 @@
     /* Navigation */
     nav {
       background-color: rgba(0, 0, 0, 0.15);
-      padding: 15px 0;
+      padding: 16px; /* Without padding on the sides, child elements could extend beyond the edges. The impact would only be noticeable on small devices. */
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
       margin-top: 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);      
     }
     
     nav ul {
+      width: 100%; /* Originally, the <ul> tag is an element that may not respect the width of its parent, so in cases like ours, it is expanding. Using the width: 100% property forces the list of links to rearrange itself and not overflow. */
       display: flex;
       justify-content: center;
+      justify-content: space-between; /* When we remove the margins from the <li> elements, their children <a> gather in a single point, so to separate them, I modify their horizontal layout.*/
       list-style: none;
     }
+
     
     nav ul li {
-      margin: 0 25px;
+      /* The margins of the <li> elements added extra space, causing their parent <ul> to be wider. */
     }
     
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 1.1rem;
       transition: all 0.3s ease;
-      padding: 8px 15px;
+      padding: 8px 12px;
       border-radius: 30px;
     }
     
@@ -390,33 +397,53 @@
       color: #666;
       margin-bottom: 2rem;
     }
-    
-    .team-card {
-      background: white;
+    /* comment */
+    .horizontal-content{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 240px));
+      align-items: center;
+      justify-items: center;
+      justify-content: center;
+      gap: 1.4rem;
+      padding: 2rem;
+    }
+
+    .team-card{
+      background: none;
       border-radius: 12px;
       padding: 2rem;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      width: 100%;
       height: 100%;
     }
     
-    .team-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    .team-img{
+      position: relative;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, .1);
+      overflow: hidden;
     }
-    
-    .team-img img {
-      border: 5px solid rgba(0, 200, 150, 0.1);
-      transition: all 0.3s ease;
+
+    .team-img img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    
-    .team-card:hover .team-img img {
-      border-color: rgba(0, 200, 150, 0.3);
+
+
+    .team-info{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+      color: #004B62;
     }
-    
     .team-info h4 {
-      color: #222;
       font-size: 1.4rem;
       margin-top: 1rem;
     }
@@ -426,15 +453,15 @@
       width: 35px;
       height: 35px;
       line-height: 35px;
-      background: rgba(0, 200, 150, 0.1);
-      color: #00c896;
+      margin: 0 4px;
+      background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
+      color: white;
       border-radius: 50%;
       text-align: center;
       transition: all 0.3s ease;
     }
     
     .team-social a:hover {
-      background: #00c896;
       color: white;
       transform: scale(1.1);
     }
@@ -827,70 +854,60 @@
 	  <div class="section-divider"></div>
 	  <p class="section-subtitle">The talented individuals behind our success</p>
   
-	  <!-- Founding Team -->
-	  <h4 class="mt-5 mb-4 text-center">Founding Team</h4>
-	  <div class="row justify-content-center">
+    <!-- team container -->
+	  <div class="row horizontal-content">
 		<!-- Founder -->
-		<div class="col-lg-6 col-md-6 mb-4">
-		  <div class="team-card text-center">
-			<div class="team-img mb-3">
-			  <img src="images/founder.png" alt="Udayraj Patare" class="img-fluid rounded-circle"
-				style="width: 200px; height: 200px; object-fit: cover;">
-			</div>
-			<div class="team-info">
-			  <h4 class="mb-0">Udayraj Patare</h4>
-			  <p class="text-muted">Founder & Managing Director</p>
-			  <div class="team-social mt-3">
-				<a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
-				<a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="far fa-envelope"></i></a>
-			  </div>
-			</div>
+		  <div class="team-card">
+        <div class="team-img">
+          <img src="images/founder.png" alt="Udayraj Patare">
+        </div>
+        <div class="team-info">
+          <h4 class="mb-0">Udayraj Patare</h4>
+          <p>Founder & Managing Director</p>
+          <!-- social media icons -->
+          <div class="team-social mt-3">
+            <a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="far fa-envelope"></i></a>
+          </div>
+        </div>
 		  </div>
-		</div>
   
 		<!-- Co-founder -->
-		<div class="col-lg-6 col-md-6 mb-4">
-		  <div class="team-card text-center">
-			<div class="team-img mb-3">
-			  <img src="images/cofounder.png" alt="Sarthak Sathu" class="img-fluid rounded-circle"
-				style="width: 200px; height: 200px; object-fit: cover;">
+		<div class="team-card">
+			<div class="team-img">
+			  <img src="images/cofounder.png" alt="Sarthak Sathu">
 			</div>
 			<div class="team-info">
 			  <h4 class="mb-0">Sarthak Sathu</h4>
-			  <p class="text-muted">Co-founder, MTech IISc</p>
+			  <p>Co-founder, MTech IISc</p>
+        <!-- social media icons -->
 			  <div class="team-social mt-3">
-				<a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
-				<a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="far fa-envelope"></i></a>
+          <a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="far fa-envelope"></i></a>
 			  </div>
 			</div>
-		  </div>
 		</div>
-	  </div>
-  
-	  <!-- Technical Experts -->
-	  <h4 class="mt-5 mb-4 text-center">Technical Experts</h4>
-	  <div class="row justify-content-center">
 		<!-- AI Engineer -->
-		<div class="col-lg-3 col-md-6 mb-4">
-		  <div class="team-card text-center">
-			<div class="team-img mb-3">
-			  <img src="images/intern1.png" alt="Pravin Raut" class="img-fluid rounded-circle"
-				style="width: 200px; height: 200px; object-fit: cover;">
+		<div class="team-card">
+			<div class="team-img">
+			  <img src="images/intern1.png" alt="Pravin Raut" class="">
 			</div>
 			<div class="team-info">
 			  <h4 class="mb-0">Pravin Raut</h4>
-			  <p class="text-muted">Generative AI Engineer</p>
+			  <p>Generative AI Engineer</p>
+        <!-- social media icons-->
 			  <div class="team-social mt-3">
-				<a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
-				<a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="far fa-envelope"></i></a>
+          <a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="far fa-envelope"></i></a>
 			  </div>
 			</div>
-		  </div>
 		</div>
 		<!-- Add more technical experts here in the same row as needed -->
+		</div>
+ 
 	  </div>
 	</div>
   </section>
