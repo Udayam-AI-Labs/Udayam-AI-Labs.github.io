@@ -421,7 +421,15 @@
       margin-bottom: 2rem;
     }
 
-    .horizontal-content{
+ .horizontal-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.8rem;
+    padding: 2rem;
+    width: 100%;
+}
+      .partners-contain{
       width: 100%;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 240px));
@@ -432,22 +440,17 @@
       padding: 2rem;
     }
 
-    .team-card {
-      gap: 1.4rem;
-      padding: 2rem;
-    }
-
-    .team-card{
-      background: none;
-      border-radius: 12px;
-      padding: 2rem;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+   .team-card {
+    gap: 1.4rem;
+    padding: 2rem;
+    background: none;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 240px; 
+}
 
     .team-img{
       position: relative;
@@ -1066,7 +1069,7 @@
       <div class="section-divider"></div>
       <p class="section-subtitle">Organizations we proudly collaborate with</p>
 
-      <div class="row horizontal-content partners-contain">
+      <div class="row partners-contain">
         <!-- Kaizen Engineering -->
 
         <div class="partner-card">
