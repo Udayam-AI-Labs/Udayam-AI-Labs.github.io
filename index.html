@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
 
@@ -162,8 +162,7 @@
     /* Navigation */
     nav {
       background-color: rgba(0, 0, 0, 0.15);
-      padding: 16px 8px;
-      border-radius: 10px;
+      padding: 16px;
       /* Without padding on the sides, child elements could extend beyond the edges. The impact would only be noticeable on small devices. */
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
@@ -193,8 +192,8 @@
       font-weight: 500;
       font-size: 1.1rem;
       transition: all 0.3s ease;
-      padding:10px 10px;
-      border-radius: 7px;
+      padding: 8px 12px;
+      border-radius: 30px;
     }
 
     nav ul li a:hover {
@@ -360,7 +359,6 @@
       padding: 4rem 0;
       background-color: white;
     }
-
     .about h2 {
       text-align: center;
       margin-bottom: 2rem;
@@ -368,7 +366,6 @@
       color: #333;
       position: relative;
     }
-
     .about h2:after {
       content: '';
       display: block;
@@ -377,20 +374,65 @@
       background: #00c896;
       margin: 15px auto;
     }
-
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: justify;
+    .accordion-container{
+       padding: 2rem;
     }
-
-    .about-content p {
+    .accordion-item{
       margin-bottom: 1rem;
-      line-height: 1.8;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    .about-content p:last-child {
-      margin-bottom: 0;
+    .accordion-item:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    .accordion-header{
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      border-left: 4px solid #3498db;
+    }
+    .accordion-header:hover{
+      background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    }
+    .accordion-item.active .accordion-header{
+      background: linear-gradient(135deg, #3498db 0%, #00c896 100%);
+      color: white;
+    }
+    .accordion-title{
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+      flex-grow: 1;
+    }
+    .accordion-icon{
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+      margin-left: 1rem;
+    }
+    .accordion-item.active .accordion-icon{
+      transform: rotate(180deg)
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      background: white;
+    }
+    .accordion-item.active .accordion-content {
+      max-height: 500px;
+      padding: 2rem;
+    }
+    .accordion-content .content-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #555;
     }
 
     /* Team Section */
@@ -811,7 +853,23 @@
       .photos {
         grid-template-columns: 1fr;
       }
-
+      /* About Section */
+      .accordion-container{
+        padding: 0.5rem;
+      }
+      .accordion-header{
+        padding: 0.5rem 0.5rem;
+      }
+      .accordion-title{
+        font-size: 1rem;
+      }
+      .accordion-item.active .accordion-content{
+        padding: 0.6rem;
+      }
+      .accordion-content .content-text{
+        font-size: 0.8rem;
+      }
+      
       .services h2,
       .gallery h2,
       .about h2,
@@ -957,42 +1015,89 @@
       </div>
     </div>
   </section>
-
+ 
+  <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
       <h2>About Udayam AI Labs</h2>
-      <div class="about-content">
-        <p>
-          At Udayam AI Labs, we are committed to empowering the next generation of thinkers, creators, and innovators
-          through cutting-edge AI education and technology solutions. Founded with a vision to bridge the gap between
-          academic learning and real-world application, we provide comprehensive training, resources, and expert
-          guidance tailored for students, educators, and professionals alike.
-        </p>
-        <p>
-          Our programs are thoughtfully designed to demystify artificial intelligence, making it both accessible and
-          practical for learners at every stage. We collaborate with schools, colleges, universities, and corporations
-          to deliver impactful workshops, hands-on coding sessions, and industry-aligned courses in AI and data science.
-        </p>
-        <p>
-          To make learning fun and effective, we integrate innovative tools like PictoBlox, enabling school students to
-          build essential coding and logical thinking skills in an interactive environment. Our mission is to create a
-          strong foundation for future careers in technology, while nurturing creativity and problem-solving abilities.
-        </p>
-        <p>
-          We are proud to announce our partnership with STEMpedia, a globally recognized leader in STEM education.
-          Through this collaboration, we bring a world-class AI curriculum and ensure its effective implementation in
-          schools through engaging, project-based learning experiences.
-        </p>
-        <p>
-          Beyond education, Udayam AI Labs also develops custom AI solutions for businesses and institutions. Our
-          expertise includes the creation of custom GPTs, AI-powered chatbots, intelligent automation tools, and
-          domain-specific generative AI applications. These solutions are built to address unique needs, streamline
-          processes, and enhance engagement across sectors.
-        </p>
-        <p>
-          Driven by a passion for technology and learning, Udayam AI Labs is your trusted partner in unlocking potential
-          through innovation — learning, building, and growing with AI.
-        </p>
+      <div class="accordion-container">
+          <div class="accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-1" aria-labelledby="title-1">
+              <h3 class="accordion-title" id="title-1">What we are?</h3> 
+               <span class="accordion-icon" aria-hidden="true">▼</span>
+            </div>
+            <div class="accordion-content" id="content-1" tabindex="-1" role="region" aria-labelledby="title-1" aria-hidden="true">
+              <p class="content-text">
+                At Udayam AI Labs, we are committed to empowering the next generation of thinkers, creators, and innovators through cutting-edge 
+                AI education and technology solutions. Founded with a vision to bridge the gap between academic learning and real-world application,
+                we provide comprehensive training, resources, and expert guidance tailored for students, educators, and professionals alike.
+              </p>
+            </div>
+          </div> 
+          <div class="accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-2" aria-labelledby="title-2">
+              <h3 class="accordion-title" id="title-2">What we do?</h3> 
+               <span class="accordion-icon" aria-hidden="true">▼</span>
+            </div>
+            <div class="accordion-content" id="content-2" tabindex="-1" role="region" aria-labelledby="title-2" aria-hidden="true">
+              <p class="content-text">
+                Our programs are thoughtfully designed to demystify artificial intelligence, making it both accessible and practical for learners
+                 at every stage. We collaborate with schools, colleges, universities, and corporations to deliver impactful workshops, 
+                 hands-on coding sessions, and industry-aligned courses in AI and data science.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-3" aria-labelledby="title-3">
+              <h3 class="accordion-title" id="title-3">How do we make learning fun?</h3> 
+               <span class="accordion-icon" aria-hidden="true">▼</span>
+            </div>
+            <div class="accordion-content" id="content-3" tabindex="-1" role="region" aria-labelledby="title-3" aria-hidden="true">
+              <p class="content-text">
+                To make learning fun and effective, we integrate innovative tools like PictoBlox, enabling school students to build essential 
+                coding and logical thinking skills in an interactive environment. Our mission is to create a strong foundation for future careers
+                in technology, while nurturing creativity and problem-solving abilities.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-4" aria-labelledby="title-4">
+              <h3 class="accordion-title" id="title-4">Who is our partner?</h3> 
+               <span class="accordion-icon" aria-hidden="true">▼</span>
+            </div>
+            <div class="accordion-content" id="content-4" tabindex="-1" role="region" aria-labelledby="title-4" aria-hidden="true">
+              <p class="content-text">
+                We are proud to announce our partnership with STEMpedia, a globally recognized leader in STEM education. Through this collaboration, 
+                we bring a world-class AI curriculum and ensure its effective implementation in schools through engaging, project-based learning experiences.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-5" aria-labelledby="title-5">
+              <h3 class="accordion-title" id="title-5">What solutions do we provide for businesses?</h3> 
+               <span class="accordion-icon" aria-hidden="true">▼</span>
+            </div>
+            <div class="accordion-content" id="content-5" tabindex="-1" role="region" aria-labelledby="title-5" aria-hidden="true">
+              <p class="content-text">
+                Beyond education, Udayam AI Labs also develops custom AI solutions for businesses and institutions. 
+                Our expertise includes the creation of custom GPTs, AI-powered chatbots, intelligent automation tools, and domain-specific 
+                generative AI applications. These solutions are built to address unique needs, streamline processes, and enhance engagement 
+                across sectors.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-6" aria-labelledby="title-6">
+              <h3 class="accordion-title" id="title-6">What drives us?</h3> 
+               <span class="accordion-icon" aria-hidden="true">▼</span>
+            </div>
+            <div class="accordion-content" id="content-6" role="region" aria-labelledby="title-6" aria-hidden="true">
+              <p class="content-text">
+                 Driven by a passion for technology and learning, Udayam AI Labs is your trusted partner in unlocking potential through 
+                 innovation — learning, building, and growing with AI.
+              </p>
+            </div>
+          </div>
       </div>
     </div>
   </section>
@@ -1018,7 +1123,7 @@
             <div class="team-social mt-3">
               <a href="https://www.linkedin.com/in/udayraj-patare?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bl7VkjueWQcCwYyTuLGjdsA%3D%3D"
                 class="me-2" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="me-2"><i class="fa-brands fa-x-twitter"></i></a>
               <a href="udayrajpatare@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
             </div>
           </div>
@@ -1035,7 +1140,7 @@
             <!-- social media icons -->
             <div class="team-social mt-3">
               <a href="linkedin.com/in/sarthaks29" class="me-2" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="me-2"><i class="fa-brands fa-x-twitter"></i></a>
               <a href="sarthak.sathu@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
             </div>
           </div>
@@ -1051,7 +1156,7 @@
             <!-- social media icons-->
             <div class="team-social mt-3">
               <a href="linkedin.com/in/pravinraut" class="me-2" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="me-2"><i class="fa-brands fa-x-twitter"></i></a>
               <a href="#"><i class="far fa-envelope"></i></a>
             </div>
           </div>
@@ -1117,7 +1222,7 @@
             </li>
             <li>
               <a href="https://x.com/labs_ai31105" target="blank">
-                <i class="fab fa-twitter"></i>
+                <i class="fa-brands fa-x-twitter"></i>
               </a>
             </li>
             <li>
@@ -1147,7 +1252,7 @@
           width="100%" 
           height="400" 
           frameborder="0" 
-          style="border: none; border-radius: 10px;" 
+          style="border: none; border-radius: 8px;" 
           allowfullscreen>
         </iframe>
         <p style="text-align: center; margin-top: 0.75rem; font-size: 13px; color: #666;">
@@ -1186,7 +1291,7 @@
 
     // Add animation classes to elements when they come into view
     document.addEventListener('DOMContentLoaded', function () {
-      const animatedElements = document.querySelectorAll('.service-card, .photo-card, .about-content p');
+      const animatedElements = document.querySelectorAll('.service-card, .photo-card');
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1204,4 +1309,34 @@
         element.classList.add('pre-animation');
       });
     });
+
+  // Accordion-toggle
+    document.addEventListener("DOMContentLoaded",()=>{
+      const firstItem = document.querySelector('.accordion-item');
+      if(firstItem){
+        firstItem.classList.add('active')
+      }
+       document.querySelectorAll('.accordion-header').forEach(header=>{
+         header.addEventListener('click', ()=>{
+          toggleAccordion(header);
+         });
+
+         header.addEventListener('keydown', (e)=>{
+          if(e.key === "Enter" || e.key === ''){
+            e.preventDefault();
+            toggleAccordion(header);
+          }
+         })
+       });
+       function toggleAccordion(header){
+        const item = header.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        document.querySelectorAll('.accordion-item').forEach(i=> i.classList.remove('active'));
+        if(!isActive){
+          item.classList.add('active');
+        }
+       }
+    });
+
   </script>
