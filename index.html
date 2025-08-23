@@ -162,13 +162,14 @@
     /* Navigation */
     nav {
       background-color: rgba(0, 0, 0, 0.15);
-      padding: 16px;
+      padding: 16px 10px;
       /* Without padding on the sides, child elements could extend beyond the edges. The impact would only be noticeable on small devices. */
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
       margin-top: 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
     }
 
     nav ul {
@@ -182,9 +183,7 @@
     }
 
 
-    nav ul li {
-      /* The margins of the <li> elements added extra space, causing their parent <ul> to be wider. */
-    }
+
 
     nav ul li a {
       color: white;
@@ -193,7 +192,7 @@
       font-size: 1.1rem;
       transition: all 0.3s ease;
       padding: 8px 12px;
-      border-radius: 30px;
+      border-radius: 6px;
     }
 
     nav ul li a:hover {
@@ -379,7 +378,7 @@
     }
     .accordion-item{
       margin-bottom: 1rem;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1252,7 +1251,7 @@
           width="100%" 
           height="400" 
           frameborder="0" 
-          style="border: none; border-radius: 8px;" 
+          style="border: none; border-radius: 10px;" 
           allowfullscreen>
         </iframe>
         <p style="text-align: center; margin-top: 0.75rem; font-size: 13px; color: #666;">
