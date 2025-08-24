@@ -726,16 +726,14 @@
       margin-top: 2.5rem;
     }
 
-    .contact-info a {
-      color: #00c896;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
 
-    .contact-info a:hover {
-      color: #00e0aa;
+    /* gradient icon */
+    .gradient-icon{
+      background: linear-gradient(135deg, rgb(0, 212, 160) 0%, rgb(0, 119, 238) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
     /* Footer */
     footer {
       background: linear-gradient(135deg, #222 0%, #444 100%);
@@ -767,28 +765,29 @@
       align-items: center;
       order: 1;
     }
-    .footer-social ul.social-links {
+    .footer-social .social-links {
       list-style: none;
       padding: 0;
       display: flex;
       gap: 15px;
       margin-bottom: 15px;
     }
-    .footer-social,
-     ul.social-links li a {
-      color: #999;
+
+    .footer-social .social-links li a i{
       font-size: 1.5rem;
       margin: 0 10px;
+      transform: scale(1);
       transition: all 0.3s ease;
     }
-
-
-    .social-links a:hover {
-      color: #00c896;
+    .footer-social .social-links li a i:hover{
+      transform: translateY(-4px);
     }
-
     .copyright {
-      font-size: 0.9rem;
+      font-size: 1rem;
+      background: radial-gradient(circle,rgba(0, 212, 160, 1) 15%, rgba(0, 119, 238, 1) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .footer-social ul.social-links a:hover {
@@ -802,7 +801,13 @@
     .footer-contact h2 {
       margin-bottom: 10px;
       font-size: 1.8rem;
+      font-family: 'Poppins', sans-serif
     }
+      .footer-contact h2::after{
+        background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
+      }
+    
+      
     /* Contact US*/
     .footer-contact{
       max-width: 600px; 
@@ -1294,12 +1299,12 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
           <ul class="social-links">
             <li>
               <a href="https://www.facebook.com/people/Udayam-AI-labs/61574847474498" target="blank">
-                <i class="fab fa-facebook"></i>
+                <i class="fab fa-facebook gradient-icon"></i>
               </a>
             </li>
             <li>
               <a href="https://x.com/labs_ai31105" target="blank">
-                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-x-twitter gradient-icon"></i>
               </a>
             </li>
             <li>
@@ -1307,12 +1312,12 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
                 href="https://www.linkedin.com/company/udayam-ai-labs"
                 target="blank"
               >
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin gradient-icon"></i>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/udayamai/?igsh=NXIwYmlnejN3dW5s#" target="blank">
-              <i class="fab fa-instagram"></i>
+              <i class="fab fa-instagram gradient-icon"></i>
               </a>
             </li>
           </ul>
@@ -1323,7 +1328,7 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
 
       <!-- Contact Us Section -->
        <section class="footer-contact">
-        <h2>We'd Love to Hear From You</h2>
+        <h2 style="font-family: 'Poppins', sans-serif">We'd Love to Hear From You</h2>
         <iframe 
           src="https://forms.office.com/Pages/ResponsePage.aspx?id=SraUQzDpEUWLQ0OCc43G4GtT0raa_GNAsQjiCquCewlUOVNVVDhCNVg1SUs2RlpKWVNNMVA5RzVKNC4u&embed=true" 
           width="100%" 
