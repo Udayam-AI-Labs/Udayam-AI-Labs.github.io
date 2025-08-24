@@ -34,6 +34,27 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
+    
+    /* custom scroll bar */
+    ::-webkit-scrollbar {
+      width: 14px;
+    }
+        
+    ::-webkit-scrollbar-track {
+      background: rgba(241, 241, 241, 0.1);
+      border-radius: 8px;
+    }
+        
+    ::-webkit-scrollbar-thumb {
+      background:linear-gradient(135deg, rgb(0, 212, 160) 0%, rgb(0, 119, 238) 100%);
+      border-radius: 8px;
+    } 
+      
+    /* Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgb(0, 119, 238) rgba(241, 241, 241, 0.1);
+    }
 
     body {
       line-height: 1.6;
@@ -789,6 +810,44 @@
       font-family: 'Arial', sans-serif; 
       color: #333;
     }
+
+        /* go up */
+    .upButton{
+      border: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, .1);
+      transition: all ease .3s;
+      cursor: pointer;
+      position: fixed;
+      z-index: 1000;
+      bottom: 36px;
+      right: 36px;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .upButton i{
+      font-size: 18px;
+    }
+
+    .upButton:hover{
+      opacity: 1;
+      transform: translateY(-4px);
+    }
+
+      /* mostrar u ocultar según el scroll del usuario */
+      .upButton.show{
+        opacity: 1;
+        visibility: visible;
+      }
+
       /* Contact Info */
     .contact-info{
       color:#00b385;
@@ -1283,6 +1342,10 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
     </div>
   </footer>
 
+  <!-- GO UP BUTTON -->
+    <button id="btnUp" class="upButton" title="Go Up">
+    <i class="fa solid fa-angle-up"></i>
+ </button>
   <!-- Scripts -->
   <script>
     // Smooth scrolling for navigation links
@@ -1349,6 +1412,70 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
           item.classList.add('active');
         }
        }
+    });
+
+	// Smooth scrolling for navigation links
+	document.querySelectorAll('nav a').forEach(anchor => {
+	  anchor.addEventListener('click', function (e) {
+		e.preventDefault();
+  
+		const targetId = this.getAttribute('href');
+		const targetElement = document.querySelector(targetId);
+  
+    setTimeout(() => {
+		  window.scrollTo({
+		    top: targetElement.offsetTop,
+		    behavior: 'smooth'
+		  });      
+    }, 150);
+
+	  });
+	});
+  
+	// Add animation classes to elements when they come into view
+	document.addEventListener('DOMContentLoaded', function () {
+	  const animatedElements = document.querySelectorAll('.service-card, .photo-card, .about-content p');
+  
+	  const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+		  if (entry.isIntersecting) {
+			entry.target.classList.add('animate-in');
+			observer.unobserve(entry.target);
+		  }
+		});
+	  }, {
+		threshold: 0.2
+	  });
+  
+	  animatedElements.forEach(element => {
+		observer.observe(element);
+		element.classList.add('pre-animation');
+	  });
+	});
+  
+  // go up function:
+  document.addEventListener('DOMContentLoaded',   function () {
+    const btnUp = document.getElementById("btnUp");
+    // Show or hide the button depending on the scroll position:
+    window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) 
+          {
+            btnUp.classList.add('show');
+          } 
+        else {
+          btnUp.classList.remove('show');
+        }
+    });
+
+    // Smooth upward scroll with delay
+      btnUp.addEventListener('click', function () {
+        setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });          
+        }, 150);
+      });
     });
 
   </script>
