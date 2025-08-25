@@ -303,7 +303,7 @@
       background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: pulse 3s infinite ease-in-out;
+      /*animation: pulse 3s infinite ease-in-out;*/
     }
 
     .service-card h3 {
@@ -333,14 +333,14 @@
       position: relative;
     }
 
-    .gallery h2:after {
+    /*.gallery h2:after {
       content: '';
       display: block;
       width: 80px;
       height: 3px;
       background: #00c896;
       margin: 15px auto;
-    }
+    }*/
 
    .photos {
   display: flex;
@@ -401,6 +401,7 @@
       color: #333;
       position: relative;
     }
+    /*
     .about h2:after {
       content: '';
       display: block;
@@ -408,7 +409,7 @@
       height: 3px;
       background: #00c896;
       margin: 15px auto;
-    }
+    }*/
 .accordion-container {
     padding: 2rem;
 }
@@ -725,16 +726,14 @@
       margin-top: 2.5rem;
     }
 
-    .contact-info a {
-      color: #00c896;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
 
-    .contact-info a:hover {
-      color: #00e0aa;
+    /* gradient icon */
+    .gradient-icon{
+      background: linear-gradient(135deg, rgb(0, 212, 160) 0%, rgb(0, 119, 238) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
     /* Footer */
     footer {
       background: linear-gradient(135deg, #222 0%, #444 100%);
@@ -766,28 +765,29 @@
       align-items: center;
       order: 1;
     }
-    .footer-social ul.social-links {
+    .footer-social .social-links {
       list-style: none;
       padding: 0;
       display: flex;
       gap: 15px;
       margin-bottom: 15px;
     }
-    .footer-social,
-     ul.social-links li a {
-      color: #999;
+
+    .footer-social .social-links li a i{
       font-size: 1.5rem;
       margin: 0 10px;
+      transform: scale(1);
       transition: all 0.3s ease;
     }
-
-
-    .social-links a:hover {
-      color: #00c896;
+    .footer-social .social-links li a i:hover{
+      transform: translateY(-4px);
     }
-
     .copyright {
-      font-size: 0.9rem;
+      font-size: 1rem;
+      background: radial-gradient(circle,rgba(0, 212, 160, 1) 15%, rgba(0, 119, 238, 1) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .footer-social ul.social-links a:hover {
@@ -801,7 +801,13 @@
     .footer-contact h2 {
       margin-bottom: 10px;
       font-size: 1.8rem;
+      font-family: 'Poppins', sans-serif
     }
+      .footer-contact h2::after{
+        background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
+      }
+    
+      
     /* Contact US*/
     .footer-contact{
       max-width: 600px; 
@@ -1054,6 +1060,7 @@
   <section id="gallery" class="gallery">
     <div class="container">
       <h2>Training Highlights</h2>
+      <div class="service-underline"></div>
       <div class="photos">
         <div class="photo-card">
           <img src="images/training2.webp" alt="Training session 2" />
@@ -1094,11 +1101,12 @@
   <section id="about" class="about">
     <div class="container">
       <h2>About Udayam AI Labs</h2>
+      <div class="service-underline"></div>
       <div class="accordion-container">
           <div class="accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-1" aria-labelledby="title-1">
               <h3 class="accordion-title" id="title-1">What we are?</h3> 
-               <span class="accordion-icon" aria-hidden="true">▼</span>
+               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"></i></span>
             </div>
             <div class="accordion-content" id="content-1" tabindex="-1" role="region" aria-labelledby="title-1" aria-hidden="true">
              <div class="content-wrapper">    <p class="content-text">
@@ -1109,10 +1117,10 @@
               </div>
             </div>
           </div> 
-<div class="accordion-item">
+          <div class="accordion-item">
   <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-5" aria-labelledby="title-5">
     <h3 class="accordion-title" id="title-5">What we do?</h3>
-    <span class="accordion-icon" aria-hidden="true">▼</span>
+    <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"></i></span>
   </div>
   <div class="accordion-content" id="content-5" tabindex="-1" role="region" aria-labelledby="title-5" aria-hidden="true">
     <div class="content-wrapper">
@@ -1120,11 +1128,11 @@
 Our programs are thoughtfully designed to demystify artificial intelligence, making it both accessible and practical for learners at every stage. We collaborate with schools, colleges, universities, and corporations to deliver impactful workshops, hands-on coding sessions, and industry-aligned courses in AI and data science.      </p>
     </div>
   </div>
-</div>
+          </div>
           <div class="accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-3" aria-labelledby="title-3">
               <h3 class="accordion-title" id="title-3">How do we make learning fun?</h3> 
-               <span class="accordion-icon" aria-hidden="true">▼</span>
+               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"></i></span>
             </div>
             <div class="accordion-content" id="content-3" tabindex="-1" role="region" aria-labelledby="title-3" aria-hidden="true">
             <div class="content-wrapper"> <p class="content-text">
@@ -1138,7 +1146,7 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
           <div class="accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-4" aria-labelledby="title-4">
               <h3 class="accordion-title" id="title-4">Who is our partner?</h3> 
-               <span class="accordion-icon" aria-hidden="true">▼</span>
+               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"></i></span>
             </div>
             <div class="accordion-content" id="content-4" tabindex="-1" role="region" aria-labelledby="title-4" aria-hidden="true">
             <div class="content-wrapper">     <p class="content-text">
@@ -1150,7 +1158,7 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
           <div class="accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-5" aria-labelledby="title-5">
               <h3 class="accordion-title" id="title-5">What solutions do we provide for businesses?</h3> 
-               <span class="accordion-icon" aria-hidden="true">▼</span>
+               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"></i></span>
             </div>
             <div class="accordion-content" id="content-5" tabindex="-1" role="region" aria-labelledby="title-5" aria-hidden="true">
              <div class="content-wrapper">    <p class="content-text">
@@ -1164,7 +1172,7 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
           <div class="accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-6" aria-labelledby="title-6">
               <h3 class="accordion-title" id="title-6">What drives us?</h3> 
-               <span class="accordion-icon" aria-hidden="true">▼</span>
+               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"></i></span>
             </div>
             <div class="accordion-content" id="content-6" role="region" aria-labelledby="title-6" aria-hidden="true">
            <div class="content-wrapper">      <p class="content-text">
@@ -1181,7 +1189,7 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
   <section id="team" class="team">
     <div class="container">
       <h2 class="section-title">Meet Our Team</h2>
-      <div class="section-divider"></div>
+      <div class="service-underline"></div>
       <p class="section-subtitle">The talented individuals behind our success</p>
 
       <!-- team container -->
@@ -1246,7 +1254,7 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
     <div class="container">
 
       <h2 class="section-title">Our Partners</h2>
-      <div class="section-divider"></div>
+      <div class="service-underline"></div>
       <p class="section-subtitle">Organizations we proudly collaborate with</p>
 
       <div class="row partners-contain">
@@ -1291,12 +1299,12 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
           <ul class="social-links">
             <li>
               <a href="https://www.facebook.com/people/Udayam-AI-labs/61574847474498" target="blank">
-                <i class="fab fa-facebook"></i>
+                <i class="fab fa-facebook gradient-icon"></i>
               </a>
             </li>
             <li>
               <a href="https://x.com/labs_ai31105" target="blank">
-                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-x-twitter gradient-icon"></i>
               </a>
             </li>
             <li>
@@ -1304,12 +1312,12 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
                 href="https://www.linkedin.com/company/udayam-ai-labs"
                 target="blank"
               >
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin gradient-icon"></i>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/udayamai/?igsh=NXIwYmlnejN3dW5s#" target="blank">
-              <i class="fab fa-instagram"></i>
+              <i class="fab fa-instagram gradient-icon"></i>
               </a>
             </li>
           </ul>
@@ -1320,7 +1328,7 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
 
       <!-- Contact Us Section -->
        <section class="footer-contact">
-        <h2>We'd Love to Hear From You</h2>
+        <h2 style="font-family: 'Poppins', sans-serif">We'd Love to Hear From You</h2>
         <iframe 
           src="https://forms.office.com/Pages/ResponsePage.aspx?id=SraUQzDpEUWLQ0OCc43G4GtT0raa_GNAsQjiCquCewlUOVNVVDhCNVg1SUs2RlpKWVNNMVA5RzVKNC4u&embed=true" 
           width="100%" 
