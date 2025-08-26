@@ -585,6 +585,9 @@
       text-align: center;
       transition: all 0.3s ease;
     }
+          .team-social a i{
+            background: none;
+          }
 
     .team-social a:hover {
       color: white;
@@ -726,18 +729,34 @@
       margin-top: 2.5rem;
     }
 
-
+    /* custon social media icons */
+      /* facebook and linkedin */
+      .fa-square-facebook{
+        background: radial-gradient(circle,#00E8F7 0%, #0005AC 100%);
+      }
+      /* linkedin */
+      .fa-linkedin{
+        background: radial-gradient(circle,#F7F7F7 0%, #2663AC 100%);
+      }
+      /* twitter/x */
+      .fa-x-twitter{
+        background: radial-gradient(circle,rgba(255, 255, 255, 0.90) 0%, rgba(0, 0, 0, 1) 100%);  
+      }
+      /* instagram */
+      .fa-instagram{
+        background: linear-gradient(120deg,rgba(81, 91, 212, 1) 0%, rgba(129, 52, 175, 1) 26%, rgba(221, 42, 123, 1) 50%, rgba(254, 218, 114, 1) 69%, rgba(245, 133, 41, 1) 100%);
+      }
     /* gradient icon */
     .gradient-icon{
-      background: linear-gradient(135deg, rgb(0, 212, 160) 0%, rgb(0, 119, 238) 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     /* Footer */
     footer {
       background: linear-gradient(135deg, #222 0%, #444 100%);
-      color: #999;
+      color: #666;
       padding: 2rem 0;
       text-align: center;
     }
@@ -752,12 +771,7 @@
       gap: 40px;
     }
 
-
-    .social-links {
-      margin-bottom: 1.5rem;
-    }
-
-
+  
     .footer-social {
       display: flex;
       flex-direction: column;
@@ -769,30 +783,38 @@
       list-style: none;
       padding: 0;
       display: flex;
-      gap: 15px;
-      margin-bottom: 15px;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
-    .footer-social .social-links li a i{
-      font-size: 1.5rem;
-      margin: 0 10px;
-      transform: scale(1);
+    .footer-social .social-links li a{
+      display: inline-block;
+      width: 1.8rem;
+      height: 1.8rem;
+      margin: 0 8px;
+      z-index: 1;
+      transform: translateY(0);
       transition: all 0.3s ease;
     }
-    .footer-social .social-links li a i:hover{
+    .footer-social .social-links li a:hover{
       transform: translateY(-4px);
     }
+    .footer-social .social-links li a i{
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      font-size: 1.6rem;
+      filter: none;
+      transition: all 0.3s ease-in;
+    }
+      .footer-social .social-links li a:hover i{
+        filter: brightness(1);
+      }
     .copyright {
       font-size: 1rem;
-      background: radial-gradient(circle,rgba(0, 212, 160, 1) 15%, rgba(0, 119, 238, 1) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color:#666;
     }
 
-    .footer-social ul.social-links a:hover {
-      color: #00c896;
-    }
       /* Contact Form */
     .footer-contact{
       flex: 1;
@@ -1299,7 +1321,7 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
           <ul class="social-links">
             <li>
               <a href="https://www.facebook.com/people/Udayam-AI-labs/61574847474498" target="blank">
-                <i class="fab fa-facebook gradient-icon"></i>
+              <i class="fa-brands fa-square-facebook gradient-icon"></i>
               </a>
             </li>
             <li>
