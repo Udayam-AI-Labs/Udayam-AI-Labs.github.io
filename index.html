@@ -318,81 +318,166 @@
       font-size: 1rem;
       line-height: 1.7;
     }
-
-    /* Gallery Section */
+     /* Training highlight section */
     .gallery {
       background-color: #f8f9fa;
       padding: 4rem 0;
+      height: auto;
     }
-
-    .gallery h2 {
+    .gallery .card-wrapper{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .gallery .container h2 {
       text-align: center;
       margin-bottom: 2rem;
       font-size: 2rem;
       color: #333;
       position: relative;
+    }     
+    .gallery-underline{
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #00d4a0 0%, #0077ee 100%);
+      margin: 0 auto 3rem;
+      border-radius: 2px;
     }
-
-    /*.gallery h2:after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: #00c896;
-      margin: 15px auto;
-    }*/
-
-   .photos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.photos > * { 
-  flex: 1 1 250px; 
-  max-width: 400px; 
-}
-
-    .photo-card {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      background-color: #ffffff;
-    }
-
-    .photo-card:hover {
-      transform: scale(1.03);
-    }
-
-    .photo-card img {
+    .gallery .card {
+      display: flex;
+      max-width: 1200px;
       width: 100%;
-      height: 200px;
+      background: white;
+      border: 1px solid transparent;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    .gallery .card-media {
+      flex: 0 0 40%;
+      min-width: 240px;
+      background: #ddd;
+      position: relative;
+      aspect-ratio: 4/3;
+    }
+    .gallery .card-media img {
+      position: absolute; inset: 0;
+      width: 100%; 
+      height: 100%;
       object-fit: cover;
       display: block;
     }
-
-    .photo-info {
-      padding: 1rem;
-      background: white;
+    .gallery .card-body {
+      flex: 1;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: start;
+      gap: 10px;
     }
-
-    .photo-info h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
+    .gallery .title {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
     }
-
-    .photo-info p {
-      font-size: 0.85rem;
-      color: #666;
+    .gallery .description {
+      margin: 0;
+      color: gray;
+      line-height: 1.6;
     }
+    .gallery .comment-box {
+      background-color: #f9fafb;
+      border-left: 4px solid #3b82f6;
+      border-radius: 8px;
+      padding: 12px;
+      width: 100%;
+    }
+    .gallery .comment-text {
+      color: #374151;
+      font-style: italic;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .gallery .comment-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .gallery .avatar-initials {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to right, #007ee8, #00caa9);
+      border-radius: 50%;
+      color: white;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    .gallery .commenter-name {
+      font-weight: 600;
+      color: #111827;
+      font-size: 0.9rem;
+    }
+    .gallery .card-btn {
+      background: #374151;
+      color: #fff;
+      border: none;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(6px); 
+     }
 
+    .gallery .card-btn:hover {
+      background: #111827;
+      transform: scale(1.1) translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+    /* Dots */
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 14px;
+      gap: 8px;
+    }
+   .dot {
+     width: 8px;
+     height: 8px;
+     border-radius: 9999px;
+     background: #0077ee;
+     border: none;
+     cursor: pointer;
+     transition: all .3s ease;
+    }
+   .dot:hover { 
+     background: #00caa9; 
+   }
+  .dot.active {
+    background: #00caa9;
+    width: 24px;
+  }
     /* About Section */
     .about {
       padding: 4rem 0;
       background-color: white;
+    }
+    .about-underline{
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #00d4a0 0%, #0077ee 100%);
+      margin: 0 auto 3rem;
+      border-radius: 2px;
     }
     .about h2 {
       text-align: center;
@@ -436,17 +521,17 @@
   }
   .accordion-header:hover {
       background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-  }
-  .accordion-item.active .accordion-header {
+   }
+   .accordion-item.active .accordion-header {
       background: linear-gradient(135deg, #3498db 0%, #00c896 100%);
       color: white;
-  }
-  .accordion-title {
+   }
+   .accordion-title {
       font-size: 1.3rem;
       font-weight: 600;
       margin: 0;
-      flex-grow: 1;
-  }
+     flex-grow: 1;
+   }
   .accordion-icon {
       font-size: 1.2rem;
       transition: transform 0.3s ease-in-out;
@@ -471,32 +556,32 @@
       overflow: hidden;
   }
 
-.accordion-content .content-text {
+  .accordion-content .content-text {
     font-size: 1rem;
     line-height: 1.7;
     color: #555;
     padding: 2rem; 
-}
-    .team {
-      padding: 4rem 0;
-      background-color: #f8f9fa;
-    }
+  }
+  .team {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+  }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      color: #333;
-      position: relative;
-      font-weight: 700;
-    }
+  .section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #333;
+    position: relative;
+    font-weight: 700;
+  }
 
-    .section-divider {
-      width: 80px;
-      height: 3px;
-      background: #00c896;
-      margin: 15px auto;
-    }
+  .section-divider {
+    width: 80px;
+    height: 3px;
+    background: #00c896;
+    margin: 15px auto;
+  }
 
     .section-subtitle {
       text-align: center;
@@ -933,10 +1018,54 @@
         margin: 5px 0;
       }
 
-      .service-grid,
-      .photos {
+      .service-grid {
         grid-template-columns: 1fr;
       }
+
+      /* Training highlight section */
+       .gallery .card{
+        flex-direction: column;
+       }
+       .gallery .card-media{
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        aspect-ratio: 21/9;
+       }
+       .gallery .card-media img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 60%;
+       }
+       .gallery .card-body{
+        gap: 10px;
+       }
+       .gallery .title {
+        font-size: 1.2rem;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+      .gallery .description {
+        line-height: 1.4;
+      } 
+      .gallery .comment-text {
+        font-size: 0.75rem;
+      }
+      .gallery .comment-footer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .gallery .avatar-initials {
+        width: 22px;
+        height: 22px;
+        font-size: 0.6rem;
+      }
+      .gallery .commenter-name {
+       font-size: 0.7rem;
+      }
+
       /* About Section */
       .accordion-container{
         padding: 0.5rem;
@@ -1056,52 +1185,41 @@
       </div>
     </div>
   </section>
-
+    
+  <!-- Training Highlights -->
   <section id="gallery" class="gallery">
     <div class="container">
       <h2>Training Highlights</h2>
-      <div class="service-underline"></div>
-      <div class="photos">
-        <div class="photo-card">
-          <img src="images/training2.webp" alt="Training session 2" />
-          <div class="photo-info">
-            <h3>School Trainings</h3>
-            <p>Introducing young learners to the word of artificial intelligence.</p>
-          </div>
-        </div>
-          <div class="photo-card">
-          <img src="images/training3.webp" alt="Training session 3" />
-          <div class="photo-info">
-            <h3>Faculty Development Programs</h3>
-            <p>Faculty learning practical Al implementation through guided exercises.</p>
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <img src="images/training1.webp" alt="Training session 1" />
-          <div class="photo-info">
-            <h3>Corporate Trainings</h3>
-            <p>Professioanls enchancing thier AI skills in an interactive setting.</p>
-          </div>
-        </div>
-
-
-        <div class="photo-card">
-          <img src="images/training4.webp" alt="Training session 4" />
-          <div class="photo-info">
-            <h3>Advanced Techniques</h3>
-            <p>Exploring cutting-edge AI methodologies with our expert trainers.</p>
-          </div>
-        </div>
+      <div class="gallery-underline"></div>
+      <div class="card-wrapper">
+        <button class="card-btn" id="prevBtn"><i class="fa-solid fa-angles-left"></i></button>
+        <article class="card" id="card">
+          <figure class="card-media" style="width:20px;">
+             <img id="cardImage" src="" alt=""/> 
+          </figure>  
+           <section class="card-body">
+             <h3 class="title" id="cardTitle">Loading title...</h3>  
+             <p class="description" id="cardDescription">Loading Desc...</p>
+             <div class="comment-box">
+              <p class="comment-text" id="userComment"></p>
+              <div class="comment-footer">
+                 <div class="avatar-initials" id="userInitials"></div>
+                 <span class="commenter-name" id="userName"></span>
+              </div>
+             </div>
+            </section>     
+        </article>
+        <button class="card-btn" id="nextBtn"><i class="fa-solid fa-angles-right"></i></button>
       </div>
-    </div>
+    <div class="dots" id="dotsContainer" aria-label="Slide indicators"></div>
+    </div> 
   </section>
  
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
       <h2>About Udayam AI Labs</h2>
-      <div class="service-underline"></div>
+      <div class="about-underline"></div>
       <div class="accordion-container">
           <div class="accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-1" aria-labelledby="title-1">
@@ -1377,7 +1495,7 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
 
     // Add animation classes to elements when they come into view
     document.addEventListener('DOMContentLoaded', function () {
-      const animatedElements = document.querySelectorAll('.service-card, .photo-card');
+      const animatedElements = document.querySelectorAll('.service-card');
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1395,7 +1513,96 @@ Our programs are thoughtfully designed to demystify artificial intelligence, mak
         element.classList.add('pre-animation');
       });
     });
+  // Training highlights card details
+    const cardData = [
+    {
+      image: {
+      src: "./images/training3.webp",
+      alt: "School Trainings Img"
+      },
+      title: "School Trainings",
+      description: "Introducing young learners to the word of artificial intelligence.",
+      reviewer: {
+        comment: "\"Amazing program! My daughter loves the hands-on robotics sessions and has learned so much about technology.\"",
+        name: "anonymous"
+      }
+     },
+     {
+      image: {
+      src: "./images/training1.webp",
+      alt: "Faculty Development Programs Img"
+      },
+      title: "Faculty Development Programs",
+      description: "Faculty learning practical Al implementation through guided exercises.",
+      reviewer: {
+        comment: "\"The curriculum is perfectly aligned with industry needs. Students graduate with real-world applicable skills.\"",
+        name: "anonymous "
+      }
+     }, 
+     {
+      image: {
+      src: "./images/training2.webp",
+      alt: "Corporate Trainings Img"
+      },
+      title: "Corporate Trainings",
+      description: "Professioanls enchancing thier AI skills in an interactive setting.",
+      reviewer: {
+        comment: "\"Transformed our team's productivity! The AI training was practical and immediately applicable to our work.\"",
+        name: "anonymous "
+      }
+     },
+     {
+      image: {
+      src: "./images/training4.webp",
+      alt: "Advanced Techniques Img"
+      },
+      title: "Advanced Techniques",
+      description: "Exploring cutting-edge AI methodologies with our expert trainers.",
+      reviewer: {
+        comment: "\"The session really helped me understand complex AI concepts in a simple way.\"",
+        name: "anonymous "
+      }
+     }
+    ]
+    const dotsContainer = document.getElementById('dotsContainer');
+    let currentTrainingCardIndex = 0;
 
+    function renderCard(index) {
+      const data = cardData[index];
+      document.getElementById("cardImage").src = data.image.src;
+      document.getElementById("cardImage").alt = data.image.alt;
+      document.getElementById("cardTitle").textContent = data.title;
+      document.getElementById("cardDescription").textContent = data.description;
+      document.getElementById("userName").textContent = data.reviewer.name;
+      document.getElementById("userComment").textContent = data.reviewer.comment;
+      document.getElementById("userInitials").textContent = data.reviewer.name.split(" ").map(n => n[0]).join("");
+      renderDots();
+    }
+    function renderDots() {
+      dotsContainer.innerHTML = '';
+      cardData.forEach((_, i) => {
+       const dot = document.createElement('button');
+       dot.className = 'dot' + (i === currentTrainingCardIndex ? ' active' : '');
+       dot.type = 'button';
+       dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+       dot.addEventListener('click', () => {
+        currentTrainingCardIndex = i;
+        renderCard(currentTrainingCardIndex);
+       });
+       dotsContainer.appendChild(dot);
+      });
+    }
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      currentTrainingCardIndex = (currentTrainingCardIndex - 1 + cardData.length) % cardData.length;
+      renderCard(currentTrainingCardIndex);
+    });
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      currentTrainingCardIndex = (currentTrainingCardIndex + 1) % cardData.length;
+      renderCard(currentTrainingCardIndex);
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCard(currentTrainingCardIndex);
+    });
   // Accordion-toggle
     document.addEventListener("DOMContentLoaded",()=>{
       const firstItem = document.querySelector('.accordion-item');
