@@ -635,6 +635,8 @@ flex: 0 1 240px;
   border-radius: 50%;
   text-align: center;
   transition: all 0.3s ease;
+} .team-social a i{
+  background: none; /* does not take the styles from the footer icons */
 }
 
 .team-social a:hover {
@@ -691,7 +693,7 @@ flex: 0 1 240px;
 }
 
 
-/* Contact Section */
+/* Contact Section 
 .contact {
   padding: 4rem 0;
   background: linear-gradient(135deg, #222 0%, #444 100%);
@@ -775,34 +777,79 @@ flex: 0 1 240px;
 .contact-info {
   text-align: center;
   margin-top: 2.5rem;
-}
-
+}*/
+/* custom social media icons */
+    /* facebook and linkedin */
+    .fa-square-facebook{
+      background: radial-gradient(circle,#00E8F7 0%, #0005AC 100%);
+    }
+    /* linkedin */
+    .fa-linkedin{
+      background: radial-gradient(circle,#F7F7F7 0%, #2663AC 100%);
+    }
+    /* twitter/x */
+    .fa-x-twitter{
+      background: radial-gradient(circle,rgba(255, 255, 255, 0.90) 0%, rgba(0, 0, 0, 1) 100%);  
+    }
+    /* instagram */
+    .fa-instagram{
+      background: linear-gradient(120deg,rgba(81, 91, 212, 1) 0%, rgba(129, 52, 175, 1) 26%, rgba(221, 42, 123, 1) 50%, rgba(254, 218, 114, 1) 69%, rgba(245, 133, 41, 1) 100%);
+    }
 
 /* gradient icon */
 .gradient-icon{
-  background: linear-gradient(135deg, rgb(0, 212, 160) 0%, rgb(0, 119, 238) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #222 0%, #444 100%);
+  position: relative;
+  width: 100vw;
   color: #999;
-  padding: 2rem 0;
+  padding: 2rem 2rem 1rem 2rem;
   text-align: center;
+  border: solid 1px red;
+  background-image: url("../assets/images/wave.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  overflow: hidden;
+} footer svg{
+  background: linear-gradient(120deg,rgba(81, 91, 212, 1) 0%, rgba(129, 52, 175, 1) 26%, rgba(221, 42, 123, 1) 50%, rgba(254, 218, 114, 1) 69%, rgba(245, 133, 41, 1) 100%);
 }
 
 .footer-content {
-  display: flex;
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  gap: 40px;
 }
+  .footer-content .footer-image{
+    width: calc(100vw - 80%);
+    animation: 2s infinite bounce linear;
+    transition: all ease-in;
+  }
+    .footer-content .footer-image img{
+      width: 100%;
+      filter: drop-shadow(-4px -2px 2px rgba(0, 0, 0, .1));
+    }
 
+    @keyframes bounce {
+      0%{
+        transform: translateY(0px);
+      }
+      25%{
+        transform: translateY(-4px);
+      }
+      75%{
+        transform: translateY(4px);
+      }
+      100%{
+        transform: translateY(0);
+      }
+    }
 
 .social-links {
   margin-bottom: 1.5rem;
