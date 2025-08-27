@@ -736,7 +736,7 @@ flex: 0 1 240px;
       grid-template-rows: auto auto;
       position: relative;
       min-height: 40vh;
-      background: url("../assets/images/onda.png");
+      background: url("../assets/images/wave.png");
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: top center;
@@ -850,6 +850,9 @@ flex: 0 1 240px;
       font-size: 1rem;
       font-weight: 400;
     }
+    .footer-social i{
+      font-size: 1.1rem;
+    }
 
     .footer-social a{
       color: rgba(255, 255, 255, .5);
@@ -864,6 +867,7 @@ flex: 0 1 240px;
     }
 
     .footer-social .social-links li a i{
+      font-size: 1.1rem;
       color: rgba(255, 255, 255, 1);
       opacity: .7;
       transition: all 0.3s ease;
