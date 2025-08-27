@@ -697,10 +697,11 @@ flex: 0 1 240px;
     /* facebook and linkedin */
     .fa-facebook{
       background: radial-gradient(circle,#0FA5F6 0%, #0065DE 100%);
-    }
+    } 
+
     /* linkedin */
     .fa-linkedin{
-      background: radial-gradient(circle,#F7F7F7 0%, #2663AC 100%);
+      background: radial-gradient(circle,#7ca6ff 0%, #2663AC 100%);
     }
     /* twitter/x */
     .fa-x-twitter{
@@ -770,7 +771,58 @@ flex: 0 1 240px;
     .contact-form {
       border: solid 1px red;
       grid-column: span 2 / span 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, minmax(60px, auto));
+      gap: 8px;
     }
+      input, textarea{
+        height: auto;
+        background:rgba(255, 255, 255, .1);
+        color: rgba(255, 255, 255, .5);
+        font-size: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        outline: none;
+        padding: 8px;
+      }
+      /* name */
+      .nameinput {
+          grid-column: span 2 / span 2;
+      }
+      /* email */
+      .emailinput {
+          grid-column: span 2 / span 2;
+          grid-column-start: 1;
+          grid-row-start: 2;
+      }
+      /* message */
+      .messageinput {
+          grid-column: span 2 / span 2;
+          grid-row: span 2 / span 2;
+          grid-column-start: 3;
+          grid-row-start: 1;
+          resize: none;
+      }
+      /* cta */
+      .cta {
+          grid-row-start: 3;
+          width: auto;
+          padding: 8px 16px;
+          border-radius: 8px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all ease-in-out .2s;
+          color: rgba(255, 255, 255, 1);
+          background: #111827;
+          border: solid 1px rgb(255, 255, 255);
+      }
+        .cta:hover{
+          color: #111827;
+          background: rgb(255, 255, 255);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    
 
     /* copyright and social media icons */
     .copy-and-social {
