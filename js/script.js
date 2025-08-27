@@ -44,7 +44,9 @@ const cardData = [
   description: "Introducing young learners to the word of artificial intelligence.",
   reviewer: {
     comment: "\"Amazing program! My daughter loves the hands-on robotics sessions and has learned so much about technology.\"",
-    name: "anonymous"
+    name: "anonymous",
+    designation: "",
+    location: "",
   }
   },
   {
@@ -55,8 +57,10 @@ const cardData = [
   title: "Faculty Development Programs",
   description: "Faculty learning practical Al implementation through guided exercises.",
   reviewer: {
-    comment: "\"The curriculum is perfectly aligned with industry needs. Students graduate with real-world applicable skills.\"",
-    name: "anonymous "
+    comment: "\"Really this workshop builds confidence to make creative ideas for teaching process.\"",
+    name: "Priyanka M",
+    designation: "TGT Science",
+    location: "PPS Bengaluru"
   }
   }, 
   {
@@ -68,7 +72,9 @@ const cardData = [
   description: "Professioanls enchancing thier AI skills in an interactive setting.",
   reviewer: {
     comment: "\"Transformed our team's productivity! The AI training was practical and immediately applicable to our work.\"",
-    name: "anonymous "
+    name: "anonymous",
+    designation: "",
+    location: "",
   }
   },
   {
@@ -79,8 +85,10 @@ const cardData = [
   title: "Advanced Techniques",
   description: "Exploring cutting-edge AI methodologies with our expert trainers.",
   reviewer: {
-    comment: "\"The session really helped me understand complex AI concepts in a simple way.\"",
-    name: "anonymous "
+    comment: "\"It was a good opportunity to learn AI in Pharma and i am interested to apply it in my future research.\"",
+    name: "Ayesha S",
+    designation:  "Pharmaceutical Analysis Dept",
+    location: "NIPER-Kolkata"
   }
   }
 ]
@@ -89,15 +97,29 @@ let currentTrainingCardIndex = 0;
 
 function renderCard(index) {
   const data = cardData[index];
+
   document.getElementById("cardImage").src = data.image.src;
   document.getElementById("cardImage").alt = data.image.alt;
   document.getElementById("cardTitle").textContent = data.title;
   document.getElementById("cardDescription").textContent = data.description;
-  document.getElementById("userName").textContent = data.reviewer.name;
+
+  let formattedName = data.reviewer.name;
+  if (data.reviewer.designation && data.reviewer.location) {
+    formattedName += `, ${data.reviewer.designation} (${data.reviewer.location})`;
+  } else if (data.reviewer.designation) {
+    formattedName += `, ${data.reviewer.designation}`;
+  } else if (data.reviewer.location) {
+    formattedName += ` (${data.reviewer.location})`;
+  }
+
+  document.getElementById("userName").textContent = formattedName;
   document.getElementById("userComment").textContent = data.reviewer.comment;
-  document.getElementById("userInitials").textContent = data.reviewer.name.split(" ").map(n => n[0]).join("");
+
+  document.getElementById("userInitials").textContent = data.reviewer.name.trim().split(/\s+/).map(w => w[0].toUpperCase()).slice(0, 2).join("");
+  
   renderDots();
 }
+
 function renderDots() {
   dotsContainer.innerHTML = '';
   cardData.forEach((_, i) => {
