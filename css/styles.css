@@ -730,24 +730,24 @@ flex: 0 1 240px;
 
     .footer-content{
       width: 100%;
-      border: solid 1px orange;
-      padding: 2rem 4rem 1rem 4rem;
+      padding: 1rem 4rem 1rem 4rem;
       display: flex;
       flex-direction: row;
+      align-items: flex-end;
       flex-wrap: wrap;
+      gap: 1rem 2rem;
       position: relative;
-      min-height: 50vh;
+      min-height: 40vh;
       background: url("../assets/images/onda.png");
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: top center;
     }
 
-
     /* mascot*/
     .footer-image{
-      width: 320px;
-      object-fit: contain;
+      width: 240px;
+      object-fit: cover;
       animation: 2s infinite bounce linear;
     }
     .footer-image img{
@@ -771,46 +771,48 @@ flex: 0 1 240px;
 
     /* contact form*/  
     .contact-form {
-      padding: 2rem;
+      padding: 1rem 1rem 0 1rem;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      max-width: 500px;
+      justify-content: end;
+      gap: 8px;
+      font-weight: 400;
+      max-width: 480px;
+
       margin: 0 auto;
     }
-      input, textarea{
+      .contact-form input,  .contact-form textarea{
+        font-size: 16px;
+        font-weight: 400;
         background:rgba(255, 255, 255, .1);
-        color: rgba(255, 255, 255, .5);
-        font-size: 1rem;
+        color: rgb(255, 255, 255);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 4px;
         outline: none;
-        padding: 8px;
-        text-align: center;
+        padding: 4px 8px;
+        text-align: left;
+        transition: all ease-in .2s;
       }
-        input, textarea::placeholder{
-          color: rgba(255, 255, 255, 0.5);
-          border: 1px solid rgb(255, 255, 255);
+        .contact-form input::placeholder,  .contact-form textarea::placeholder{
+          color: rgba(255, 255, 255, 0.4);
+          border: 1px solid rgba(255, 255, 255, .1);
         }
-      /* name */
-      .nameinput {
-          grid-column: 1 / 3;
-      }
-      /* email */
-      .emailinput {
-          grid-column: 1 / 3;
-      }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+          border-color: rgba(255, 255, 255, 0.4);
+          background: rgba(255, 255, 255, 0.15);
+          transform: translateY(-2px);
+        }
+
       /* message */
       .messageinput {
-          grid-column: 1 / 3;
-          resize: none;
-          height: 80px;
+        resize: none;
+        height: 80px;
       }
       /* cta */
       .cta {
-          grid-column: 1 / 3;
           padding: 8px 16px;
-          border-radius: 8px;
+          border-radius: 4px;
           font-weight: 500;
           cursor: pointer;
           transition: all ease-in-out .2s;
@@ -825,16 +827,16 @@ flex: 0 1 240px;
           border: 1px solid #111827;
         }
     
-
     /* copyright and social media icons */
     .copy-and-social {
-        grid-column: 1 / 3;
+        width: 100%;
         display: flex;
         align-content: center;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: 12px;
+        border: solid 1px red;
     }
 
     .footer-social {
