@@ -349,9 +349,23 @@
 
         <!------->
           <input type="hidden" name="_subject" value="New Message from Udayam AI Labs Website">
-          <input type="hidden" name="_autoresponse" value="Your message is important to us. We'll get back to you as soon as possible. ">
+          <!-- auto reponse -->
+          <input type="hidden" name="_autoresponse" value="subject:Thank you from Udayam AI Labs||Dear {{Name}},
+
+          Thank you for contacting Udayam AI Labs! Your message is important to us. We'll get back to you as soon as possible.
+
+          Your message:
+          {{Message}}
+
+          Best regards,
+          Udayam AI Labs Team
+          support@udayam.co.in
+          +91-8600302429">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
+
+          <!-- back home -->
+          <input type="hidden" name="_next" value="https://grace-silva.github.io/Udayam-AI-Labs.github.io/index.html">
 
         <button class="cta" id="submitBtn">Send Message</button>
    
