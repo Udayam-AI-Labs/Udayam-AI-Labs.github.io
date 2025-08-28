@@ -350,8 +350,9 @@ nav ul li a:hover {
 }
 .gallery .description {
   margin: 0;
-  color: gray;
+  color: rgba(55, 50, 49, 0.91);
   line-height: 1.6;
+  font-weight: 600;
 }
 .gallery .comment-box {
   background-color: #f9fafb;
@@ -424,8 +425,9 @@ nav ul li a:hover {
   background: #0077ee;
   border: none;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
+
 .dot:hover { 
   background: #00caa9; 
 }
@@ -613,7 +615,7 @@ flex: 0 1 240px;
   color: #004B62;
 }
 
-.team-info h4 {
+.team-info h3 {
   font-size: 1.4rem;
   margin-top: 1rem;
 }
@@ -674,7 +676,7 @@ flex: 0 1 240px;
   width: 100%;
 }
 
-.partner-card h3 {
+.partner-card h2 {
   color: #666;
   margin-top: 1rem;
   font-weight: 500;
@@ -919,7 +921,7 @@ footer {
   color:#00b385;
 }
 .contact-info a {
-  color: #00c896;
+  color: #036f54;
   text-decoration: none;
 }
 .contact-info a:hover {
