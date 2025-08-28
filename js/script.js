@@ -239,50 +239,37 @@ window.addEventListener('scroll', function () {
   });
 });
 
-/* send emails 
-
-const contactForm = document.getElementById("contact-form");
-const sendBtn = document.getElementById("submitBtn");
-
-
-contactForm.addEventListener("submit", submitData);
-
-  function submitData(event) /*->submit {
-    /*const submitText = sendBtn.innerHTML;
-    sendBtn.innerHTML= '<i class="fas fa-spinner fa-spin"></i>'; /* sending animation */
-    //submitBtn.disabled = true; /* disable user click  */
-    
-    /*setTimeout(() => {
-        contactForm.reset();
-        submitBtn.innerHTML = submitText;
-        submitBtn.disabled = false; 
-    }, 3000);
-  }*/
+/* send emails */
   
 function showAlert(event) {
-    // Solo prevenir default si quieres control total
+    // the page won´t reload by default
     event.preventDefault();
     
     const submitBtn = document.getElementById("submitBtn");
     const originalText = submitBtn.innerHTML;
     
-    // Feedback visual inmediato
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-    submitBtn.disabled = true;
+    // Disables the button behaviour to simulate a loading animation
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity="0.5";
+      submitBtn.style.pointerEvents = "none";
+      submitBtn.style.cursor = "not-allowed";
     
-    // Alert rápido
-    alert('Thank you! Your message is being sent...');
+    // 
+    alert("Your message will be send.We'll get back to you as soon as possible.");
     
-    // Re-enviar el formulario después de 1 segundo
+    // Send the form after 1 second
     setTimeout(() => {
-        // Enviar de forma tradicional
         event.target.submit();
         
-        // Opcional: resetear después de enviar
+        // Reset the form 
         setTimeout(() => {
             event.target.reset();
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
+            submitBtn.style.opacity="1";
+            submitBtn.style.pointerEvents = "auto";
+            submitBtn.style.cursor = "allowed";
         }, 2000);
     }, 1500);
     
