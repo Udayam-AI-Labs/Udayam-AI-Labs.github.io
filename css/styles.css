@@ -1,3 +1,24 @@
+:root {
+  /* Brand Colors */
+  --primary-color: #00d4a0;
+  --secondary-color: #0077ee;
+  --accent-color: #00c896;
+  --dark-color: #222;
+  --light-color: #f8f9fa;
+
+  /* Text Colors */
+  --text-dark: #333;
+  --text-light: #666;
+  --text-heading: #222;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  --gradient-secondary:linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  --gradient-mix: radial-gradient(circle, var(--primary-color) 15%, var(--secondary-color) 100%);
+  --gradient-header: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  --gradient-dark: linear-gradient(135deg, var(--dark-color) 0%, #444 100%);
+}
+
 
 html{
   scroll-behavior: smooth;
@@ -21,7 +42,7 @@ html{
 }
     
 ::-webkit-scrollbar-thumb {
-  background:linear-gradient(135deg, rgb(0, 212, 160) 0%, rgb(0, 119, 238) 100%);
+  background: var(--gradient-primary);
   border-radius: 8px;
 } 
   
@@ -33,8 +54,8 @@ html{
 
 body {
   line-height: 1.6;
-  color: #333;
-  background-color: #f8f9fa;
+  color: var(--text-dark);
+  background-color: var(--light-color);
 }
 
 .container {
@@ -77,7 +98,7 @@ body {
 
 /* Header Styles */
 header {
-  background: linear-gradient(90deg, #00d4a0 0%, #0077ee 100%);
+  background: var(--gradient-header);
   color: white;
   padding: 4rem 0 2rem;
   text-align: center;
@@ -178,9 +199,6 @@ nav ul {
   list-style: none;
 }
 
-
-
-
 nav ul li a {
   color: white;
   text-decoration: none;
@@ -208,7 +226,7 @@ nav ul li a:hover {
   text-align: center;
   margin-bottom: 1rem;
   font-size: 2.5rem;
-  color: #333;
+  color: var(--text-dark);
   position: relative;
   font-weight: 700;
 }
@@ -216,7 +234,7 @@ nav ul li a:hover {
 .service-underline {
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, #00d4a0 0%, #0077ee 100%);
+  background: var(--gradient-primary);
   margin: 0 auto 3rem;
   border-radius: 2px;
 }
@@ -266,7 +284,7 @@ nav ul li a:hover {
   font-size: 3rem;
   margin-bottom: 1.5rem;
   display: inline-block;
-  background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /*animation: pulse 3s infinite ease-in-out;*/
@@ -275,18 +293,18 @@ nav ul li a:hover {
 .service-card h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #222;
+  color: var(--text-dark);
   font-weight: 600;
 }
 
 .service-card p {
-  color: #666;
+  color: var(--text-light);
   font-size: 1rem;
   line-height: 1.7;
 }
   /* Training highlight section */
 .gallery {
-  background-color: #f8f9fa;
+  background-color: var(--light-color);
   padding: 4rem 0;
   height: auto;
 }
@@ -299,13 +317,13 @@ nav ul li a:hover {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #333;
+  color: var(--text-dark);
   position: relative;
 }     
 .gallery-underline{
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, #00d4a0 0%, #0077ee 100%);
+  background: var(--gradient-primary);
   margin: 0 auto 3rem;
   border-radius: 2px;
 }
@@ -378,7 +396,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #007ee8, #00caa9);
+  background: var(--gradient-primary);
   border-radius: 50%;
   color: white;
   font-weight: 600;
@@ -422,17 +440,17 @@ nav ul li a:hover {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: #0077ee;
+  background: var(--secondary-color);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .dot:hover { 
-  background: #00caa9; 
+  background: var(--primary-color); 
 }
 .dot.active {
-background: #00caa9;
+background: var(--primary-color);
 width: 24px;
 }
 /* About Section */
@@ -443,7 +461,7 @@ width: 24px;
 .about-underline{
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, #00d4a0 0%, #0077ee 100%);
+  background: var(--gradient-primary);
   margin: 0 auto 3rem;
   border-radius: 2px;
 }
@@ -451,18 +469,9 @@ width: 24px;
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #333;
+  color: var(--text-dark);
   position: relative;
 }
-/*
-.about h2:after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: #00c896;
-  margin: 15px auto;
-}*/
 .accordion-container {
 padding: 2rem;
 }
@@ -478,7 +487,7 @@ transform: translateY(-2px);
 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 .accordion-header {
-background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
 padding: 1.5rem 2rem;
 cursor: pointer;
 display: flex;
@@ -532,14 +541,14 @@ padding: 2rem;
 }
 .team {
 padding: 4rem 0;
-background-color: #f8f9fa;
+background-color: var(--light-color);
 }
 
 .section-title {
 text-align: center;
 margin-bottom: 1rem;
 font-size: 2rem;
-color: #333;
+color: var(--text-dark);
 position: relative;
 font-weight: 700;
 }
@@ -547,14 +556,14 @@ font-weight: 700;
 .section-divider {
 width: 80px;
 height: 3px;
-background: #00c896;
+background: var(--accent-color);
 margin: 15px auto;
 }
 
 .section-subtitle {
   text-align: center;
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-light);
   margin-bottom: 2rem;
 }
 
@@ -566,7 +575,7 @@ gap: 1.8rem;
 padding: 2rem;
 width: 100%;
 }
-  .partners-contain{
+.partners-contain{
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 240px));
@@ -632,7 +641,7 @@ flex: 0 1 240px;
   height: 35px;
   line-height: 35px;
   margin: 0 4px;
-  background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
+  background: var(--gradient-primary);
   color: white;
   border-radius: 50%;
   text-align: center;
@@ -677,7 +686,7 @@ flex: 0 1 240px;
 }
 
 .partner-card h2 {
-  color: #666;
+  color: var(--text-light);
   margin-top: 1rem;
   font-weight: 500;
   text-align: center;
@@ -696,7 +705,7 @@ flex: 0 1 240px;
 /* Contact Section */
 .contact {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #222 0%, #444 100%);
+  background: var(--gradient-dark);
   color: white;
 }
 
@@ -712,7 +721,7 @@ flex: 0 1 240px;
   display: block;
   width: 80px;
   height: 3px;
-  background: #00c896;
+  background: var(--accent-color);
   margin: 15px auto;
 }
 
@@ -758,7 +767,7 @@ flex: 0 1 240px;
 .btn {
   display: inline-block;
   padding: 0.8rem 2rem;
-  background: #00c896;
+  background: var(--accent-color);
   color: white;
   border: none;
   border-radius: 4px;
@@ -782,14 +791,13 @@ flex: 0 1 240px;
 
 /* gradient icon */
 .gradient-icon{
-  background: linear-gradient(135deg, rgb(0, 212, 160) 0%, rgb(0, 119, 238) 100%);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #222 0%, #444 100%);
   color: #999;
   padding: 2rem 0;
   text-align: center;
@@ -837,14 +845,14 @@ footer {
 }
 .copyright {
   font-size: 1rem;
-  background: radial-gradient(circle,rgba(0, 212, 160, 1) 15%, rgba(0, 119, 238, 1) 100%);
+  background: var(--gradient-mix);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .footer-social ul.social-links a:hover {
-  color: #00c896;
+  color: var(--accent-color);
 }
   /* Contact Form */
 .footer-contact{
@@ -857,7 +865,7 @@ footer {
   font-family: 'Poppins', sans-serif
 }
   .footer-contact h2::after{
-    background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
+    background: var(--gradient-primary);
   }
 
   
@@ -876,7 +884,7 @@ footer {
   font-size: 20px; 
   margin-bottom: 1rem; 
   font-family: 'Arial', sans-serif; 
-  color: #333;
+  color: var(--text-dark);
 }
 
     /* go up */
@@ -890,7 +898,7 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #00d4a0 0%, #0077ee 100%);
+  background: var(--gradient-primary);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, .1);
   transition: all ease .3s;
   cursor: pointer;
@@ -926,6 +934,7 @@ footer {
 }
 .contact-info a:hover {
   text-decoration: underline;
+  font-weight: 600;
 }
 .copyright {
   font-size: 0.9rem;
