@@ -127,10 +127,26 @@ function renderDots() {
     dot.className = 'dot' + (i === currentTrainingCardIndex ? ' active' : '');
     dot.type = 'button';
     dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    if(i === currentTrainingCardIndex){
+      dot.setAttribute('aria-current', 'true');
+    }
     dot.addEventListener('click', () => {
     currentTrainingCardIndex = i;
     renderCard(currentTrainingCardIndex);
     });
+    dot.addEventListener('keydown', (e)=>{
+      if(e.key === "ArrowRight") {
+        const next = (i + 1) % cardData.length;
+        dotsContainer.children[next].focus();
+        currentTrainingCardIndex = next;
+        renderCard(next);
+      }else if(e.key === "ArrowLeft"){
+        const prev = (i - 1 + cardData.length) % cardData.length;
+        dotsContainer.children[prev].focus();
+        currentTrainingCardIndex = prev;
+        renderCard(prev);
+      }
+    })
     dotsContainer.appendChild(dot);
   });
 }
