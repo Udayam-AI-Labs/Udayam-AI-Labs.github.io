@@ -342,13 +342,22 @@
         <img src="./assets/images/mascota.png" alt="">
       </div>
       <!-- form contact -->
-      <form action="https://formsubmit.co/gsDuarte2024@outlook.com" class="contact-form" method="post">
-        <input type="text" placeholder="Full name" name="name" class="nameinput" required>
-        <input type="email" name="Email" placeholder="youremail@domain.com" class="emailinput" required>
+      <form action="" class="contact-form" method="" id="contact-form">
+        <input type="text" placeholder="Full name" name="Name" class="nameinput" required>
+        <input type="email" name="Email" placeholder="gsDuarte2024@outlook.com" class="emailinput" required>
         <textarea name="Message" id="" cols="30" rows="10" placeholder="Message" class="messageinput" required></textarea>
 
-        <button class="cta">Send Message</button>
+        <!------->
+          <input type="hidden" name="_subject" value="New Message from Udayam AI Labs Website">
+          <input type="hidden" name="_autoresponse" value="Your message is important to us. We'll get back to you as soon as possible. ">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://grace-silva.github.io/Udayam-AI-Labs.github.io/">
+
+        <button class="cta" id="submitBtn">Send Message</button>
+   
       </form>
+
       <!-- contact info and social media icons -->
        <div class="contact-info">
         <!-- email -->

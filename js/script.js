@@ -238,3 +238,24 @@ window.addEventListener('scroll', function () {
     }, 150);
   });
 });
+
+/* send emails */
+
+const contactForm = document.getElementById("contact-form");
+const sendBtn = document.getElementById("submitBtn");
+
+
+contactForm.addEventListener("submit", submitData);
+
+  function submitData(event) /*->submit */{
+    const submitText = sendBtn.innerHTML;
+    sendBtn.innerHTML= '<i class="fas fa-spinner fa-spin"></i>'; /* sending animation */
+    submitBtn.disabled = true; /* disable user click  */
+    /*  */
+    setTimeout(() => {
+        contactForm.reset();
+        submitBtn.innerHTML = submitText;
+        submitBtn.disabled = false; 
+    }, 3000);
+  }
+  
