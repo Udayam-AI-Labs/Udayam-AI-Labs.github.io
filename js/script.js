@@ -239,7 +239,7 @@ window.addEventListener('scroll', function () {
   });
 });
 
-/* send emails */
+/* send emails 
 
 const contactForm = document.getElementById("contact-form");
 const sendBtn = document.getElementById("submitBtn");
@@ -247,15 +247,44 @@ const sendBtn = document.getElementById("submitBtn");
 
 contactForm.addEventListener("submit", submitData);
 
-  function submitData(event) /*->submit */{
-    const submitText = sendBtn.innerHTML;
+  function submitData(event) /*->submit {
+    /*const submitText = sendBtn.innerHTML;
     sendBtn.innerHTML= '<i class="fas fa-spinner fa-spin"></i>'; /* sending animation */
-    submitBtn.disabled = true; /* disable user click  */
-    /*  */
-    setTimeout(() => {
+    //submitBtn.disabled = true; /* disable user click  */
+    
+    /*setTimeout(() => {
         contactForm.reset();
         submitBtn.innerHTML = submitText;
         submitBtn.disabled = false; 
     }, 3000);
-  }
+  }*/
   
+function showAlert(event) {
+    // Solo prevenir default si quieres control total
+    event.preventDefault();
+    
+    const submitBtn = document.getElementById("submitBtn");
+    const originalText = submitBtn.innerHTML;
+    
+    // Feedback visual inmediato
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    submitBtn.disabled = true;
+    
+    // Alert rápido
+    alert('Thank you! Your message is being sent...');
+    
+    // Re-enviar el formulario después de 1 segundo
+    setTimeout(() => {
+        // Enviar de forma tradicional
+        event.target.submit();
+        
+        // Opcional: resetear después de enviar
+        setTimeout(() => {
+            event.target.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 2000);
+    }, 1500);
+    
+    return false;
+}
