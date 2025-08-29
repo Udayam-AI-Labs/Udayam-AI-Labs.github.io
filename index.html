@@ -40,27 +40,37 @@
 
 <body>
   <header>
-    <div class="container">
-      <div class="header-content">
-        <div class="logo-container">
-          <img src="assets/images/logo.png" alt="Udayam AI Labs Logo" class="logo"
-            style="width: 200px; height: auto;" />
-          <h1>Udayam AI Labs</h1>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Training</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#team">Our Team</a></li>
-            <li><a href="#partners">Partners</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+  <!-- Navbar -->
+    <nav class="nav-container" aria-label="Main navigation">
+      <div class="logo-container">
+        <a href="/" class="logo-link">
+         <img src="assets/images/logo.png" alt="Udayam AI Labs logo"/>
+         <span class="nav-title">Udayam AI Labs</span>
+        </a>
       </div>
-    </div>
+      <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Training</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
+  <!-- Hero Section -->
+  <section id="hero-section" class="hero-section" aria-labelledby="hero-heading">
+    <div class="hero-section-text">
+      <span class="tagline">Udayam AI Labs - Empowering the future with Technology</span>
+      <h2 id="hero-heading">AI & Technology Education for Schools, Universities & Corporates</h2>
+      <p>Transform learning with cutting-edge AI, robotics, and emerging technologies through comprehensive educational programs tailored for every level.</p>
+    </div>       
+  </section>
 
+  <!-- Services Section -->
   <section id="services" class="services">
     <div class="container">
       <h2>Our Services</h2>
