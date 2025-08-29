@@ -254,3 +254,40 @@ window.addEventListener('scroll', function () {
     }, 150);
   });
 });
+
+/* send emails */
+  
+function showAlert(event) {
+    // the page won´t reload by default
+    event.preventDefault();
+    
+    const submitBtn = document.getElementById("submitBtn");
+    const originalText = submitBtn.innerHTML;
+    
+    // Disables the button behaviour to simulate a loading animation
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity="0.5";
+      submitBtn.style.pointerEvents = "none";
+      submitBtn.style.cursor = "not-allowed";
+    
+    // 
+    alert("Your message will be send.We'll get back to you as soon as possible.");
+    
+    // Send the form after 1 second
+    setTimeout(() => {
+        event.target.submit();
+        
+        // Reset the form 
+        setTimeout(() => {
+            event.target.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            submitBtn.style.opacity="1";
+            submitBtn.style.pointerEvents = "auto";
+            submitBtn.style.cursor = "allowed";
+        }, 2000);
+    }, 1500);
+    
+    return false;
+}
