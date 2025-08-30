@@ -237,12 +237,7 @@ header{
   position: relative;
   overflow: hidden; 
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 6rem 2rem 4rem;
-  position: relative;
+
 }
 .hero-section::before {
   content: "";
@@ -254,7 +249,15 @@ header{
 }
 .hero-section-text {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12rem 2rem 4rem;
+  gap: 1.4rem;
+  position: relative;
 }
 .tagline {
   display: inline-block;
@@ -1225,8 +1228,9 @@ flex: 0 1 240px;
       font-size: 1.1rem;
     }
     
-    .hero-section {
-      padding: 5rem 0.75rem 3rem;
+    .hero-section-text {
+      padding: 8rem 0.75rem 3rem;
+      gap: 2rem;
     }
     .hero-section-text span{
       font-size: 0.7rem;
