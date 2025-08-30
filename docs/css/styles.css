@@ -896,14 +896,14 @@ flex: 0 1 240px;
           cursor: pointer;
           transition: all ease-in-out .2s;
           color: rgba(255, 255, 255, 1);
-          background: #111827;
+          background: transparent;
           border: solid 1px rgb(255, 255, 255);
           height: auto;
       }
         .cta:hover{
           color: #111827;
           background: rgb(255, 255, 255);
-          border: 1px solid #111827;
+          box-shadow: inset 0 0 0 1px #111827;
         }
       /* sending animation */
       .cta.loading {
@@ -946,38 +946,44 @@ flex: 0 1 240px;
       flex-direction: row;
       align-items: center;
       gap: 16px;
-      color: rgba(255, 255, 255, .5);
+      color: rgba(255, 255, 255, .7);
       font-size: 1rem;
       font-weight: 400;
       text-align: left;
+      transition: all ease-in .3s;
+    }
+    .footer-social.info:hover{
+      color: rgb(255, 255, 255);
+      text-shadow: 0 0 4px rgba(247, 247, 247, 0.7);
     }
     .footer-social i{
       font-size: 1.1rem;
     }
 
-    .footer-social a{
-      color: rgba(255, 255, 255, .5);
+    .footer-social.info a{
+      color: rgba(255, 255, 255, .7);
       text-decoration: none;
-    }
-
+      transition: all 0.3s ease-in;
+    } .footer-social.info a:hover{
+        color: rgb(255, 255, 255);
+        text-shadow: 0 0 4px rgba(247, 247, 247, 0.7);
+      }
+    /* social media icons */
     .footer-social .social-links {
       list-style: none;
       display: inline-flex;
       align-items: center;
       gap: 16px;
     }
-
     .footer-social .social-links li a i{
-      font-size: 1.1rem;
       color: rgba(255, 255, 255, 1);
       opacity: .7;
-      transition: all 0.3s ease;
+      transition: all 0.3s ease-in;
     }
     .footer-social .social-links li a i:hover{
       opacity: 1;
-      color: #3DC2EC;
-      filter: drop-shadow(0 0 12px #3DC2EC);
       transform: translateY(-4px);
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
     }
 
 
