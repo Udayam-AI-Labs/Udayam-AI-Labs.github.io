@@ -1,7 +1,7 @@
 :root {
   /* Brand Colors */
-  --primary-color: #00d4a0;
-  --secondary-color: #0077ee;
+  --primary-color: #473fc5;
+  --secondary-color:#4f46e5 ;
   --accent-color: #00c896;
   --dark-color: #222;
   --light-color: #f8f9fa;
@@ -177,7 +177,7 @@ header{
 }
 .nav-links a:hover,
 .nav-links a:focus {
-  color: #06b6d4;
+  color: var(--primary-color);
   background: rgba(79, 70, 229, 0.05);
   transform: translateY(-1px);
   outline: none;
@@ -581,13 +581,13 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 transition: all 0.3s ease-in-out; 
-border-left: 4px solid #3498db;
+border-left: 4px solid var(--primary-color);
 }
 .accordion-header:hover {
   background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
 }
 .accordion-item.active .accordion-header {
-  background: linear-gradient(135deg, #3498db 0%, #00c896 100%);
+  background: var(--gradient-secondary);
   color: white;
 }
 .accordion-title {
@@ -1082,7 +1082,7 @@ flex: 0 1 240px;
   .nav-links a:hover,
   .nav-links a:focus {
     background: rgba(79, 70, 229, 0.1);
-    color: var(--primary-blue);
+    color: var(--primary-color);
   }
   .menu-toggle {
     display: block;
