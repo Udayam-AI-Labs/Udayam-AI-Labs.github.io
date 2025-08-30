@@ -367,32 +367,12 @@
         <img src="./assets/images/mascota.png" alt="">
       </div>
       <!-- form contact -->
-      <form action="https://formsubmit.co/gsDuarte2024@outlook.com" class="contact-form" method="post" id="contact-form" onsubmit="showAlert(event)">
-        <input type="text" placeholder="Full name" name="Name" class="nameinput" required>
-        <input type="email" name="Email" placeholder="yourmail@domain.com" class="emailinput" required>
-        <textarea name="Message" id="" cols="30" rows="10" placeholder="Message" class="messageinput" required></textarea>
+      <form class="contact-form" id="contact-form">
+        <input type="text" placeholder="Full name" name="name" class="nameinput" required>
+        <input type="email" name="email" placeholder="yourmail@domain.com" class="emailinput" required>
+        <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="messageinput" required></textarea>
 
-        <!------->
-          <input type="hidden" name="_subject" value="New Message from Udayam AI Labs Website">
-          <!-- auto reponse -->
-          <input type="hidden" name="_autoresponse" value="subject:Thank you from Udayam AI Labs||Dear {{Name}},
-
-          Thank you for contacting Udayam AI Labs! Your message is important to us. We'll get back to you as soon as possible.
-
-          Your message:
-          {{Message}}
-
-          Best regards,
-          Udayam AI Labs Team
-          support@udayam.co.in
-          +91-8600302429">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-
-          <!-- back home -->
-          <input type="hidden" name="_next" value="https://grace-silva.github.io/Udayam-AI-Labs.github.io/index.html#contact">
-
-        <button class="cta" id="submitBtn">Send Message</button>
+        <button class="cta" id="submitBtn" type="submit">Send Message</button>
    
       </form>
 
@@ -450,6 +430,8 @@
  </button>
   <!-- Scripts -->
  <script src="js/script.js" defer></script>
+  <!-- email js -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </body>
 

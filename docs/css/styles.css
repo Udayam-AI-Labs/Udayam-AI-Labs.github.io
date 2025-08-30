@@ -880,7 +880,6 @@ flex: 0 1 240px;
       }
         .contact-form input::placeholder,  .contact-form textarea::placeholder{
           color: rgba(255, 255, 255, 0.4);
-          border: 1px solid rgba(255, 255, 255, .1);
         }
         .contact-form input:focus,
         .contact-form textarea:focus {
@@ -911,6 +910,29 @@ flex: 0 1 240px;
           background: rgb(255, 255, 255);
           border: 1px solid #111827;
         }
+      /* sending animation */
+      .cta.loading {
+        position: relative;
+        color: transparent !important;
+      }
+
+      .cta.loading::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        left: 50%;
+        margin: -10px 0 0 -10px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 1s ease-in infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }  
     
     /* contact info and social media icons */
     .contact-info {
