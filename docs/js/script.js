@@ -44,9 +44,9 @@ const cardData = [
   description: "Introducing young learners to the word of artificial intelligence.",
   reviewer: {
     comment: "\"Amazing program! My daughter loves the hands-on robotics sessions and has learned so much about technology.\"",
-    name: "Ananya G, Baldwin Girls' High School, Bangalore",
-    designation: "",
-    location: "",
+    name: "Ananya G",
+    designation: "Baldwin Girls' High School",
+    location: "Bangalore",
   }
   },
   {
@@ -71,10 +71,10 @@ const cardData = [
   title: "Corporate Trainings",
   description: "Professioanls enchancing thier AI skills in an interactive setting.",
   reviewer: {
-    comment: "\"Transformed our team's productivity! The AI training was practical and immediately applicable to our work.\"",
-    name: "anonymous",
-    designation: "",
-    location: "",
+    comment: "\"The corporate training by Udayam AI Labs was highly engaging and practical. Mr. Udayraj Patare delivered complex AI concepts with clarity, real-world examples, and hands-on activities. Our team walked away with future-ready skills that we can apply immediately in our work.\"",
+    name: "MR.TEJAS INAGALE",
+    designation: "KAIZEN ENGINEERING",
+    location: "A.NAGAR",
   }
   },
   {
