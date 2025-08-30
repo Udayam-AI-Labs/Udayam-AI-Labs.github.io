@@ -44,7 +44,7 @@ const cardData = [
   description: "Introducing young learners to the word of artificial intelligence.",
   reviewer: {
     comment: "\"Amazing program! My daughter loves the hands-on robotics sessions and has learned so much about technology.\"",
-    name: "anonymous",
+    name: "Ananya G, Baldwin Girls' High School, Bangalore",
     designation: "",
     location: "",
   }
