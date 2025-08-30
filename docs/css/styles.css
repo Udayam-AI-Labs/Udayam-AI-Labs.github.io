@@ -711,38 +711,32 @@ flex: 0 1 240px;
   justify-content: center;
   gap: 1rem;
   text-align: center;
-  color: #004B62;
+  color: var(--text-light);
 }
 
 .team-info h3 {
   font-size: 1.4rem;
   margin-top: 1rem;
+  color: var(--text-dark);
 }
 
 .team-social{
   width: 100%;
   display: inline-flex;
-  justify-content: center;
-  gap: 16px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1rem;
 }
-.team-social a {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  margin: 0 4px;
-  background: var(--gradient-primary);
-  color: white;
-  border-radius: 50%;
-  text-align: center;
+ .team-social a i{
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary-color);
   transition: all 0.3s ease;
-} .team-social a i{
-  background: none; /* does not take the styles from the footer icons */
 }
 
-.team-social a:hover {
-  color: white;
-  transform: scale(1.1);
+.team-social a i:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 0 8px var(--primary-color));
 }
 
 /* Partners Section */
@@ -795,6 +789,7 @@ flex: 0 1 240px;
 
     /* gradient icon */
     .gradient-icon{
+      background: var(--gradient-primary);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
