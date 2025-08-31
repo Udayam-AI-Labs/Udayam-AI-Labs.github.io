@@ -735,6 +735,7 @@ flex: 0 1 240px;
 .team-info h3 {
   font-size: 1.4rem;
   margin-top: 1rem;
+  font-weight: 600;
 }
 
 .team-social{
