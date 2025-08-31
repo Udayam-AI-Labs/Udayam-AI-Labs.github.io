@@ -69,6 +69,9 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 2;
 }
 
@@ -337,7 +340,7 @@ header{
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  max-width: 1280px;
 }
 
 .service-card {
@@ -397,23 +400,30 @@ header{
   line-height: 1.7;
 }
   /* Training highlight section */
+
+
 .gallery {
   background-color: var(--light-color);
   padding: 4rem 0;
   height: auto;
+
 }
+
 .gallery .card-wrapper{
   display: flex;
   align-items: center;
   gap: 16px;
+  justify-content: center;
 }
 .gallery .container h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+    text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
   color: var(--text-dark);
   position: relative;
+  font-weight: 700;
 }     
+
 .gallery-underline{
   width: 100px;
   height: 4px;
@@ -430,6 +440,8 @@ header{
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 1px 2px rgba(0,0,0,.04);
+   min-height: 339px; 
+   
 }
 .gallery .card-media {
   flex: 0 0 40%;
@@ -459,6 +471,7 @@ header{
   font-size: 1.5rem;
   line-height: 1.25;
   letter-spacing: -0.01em;
+  font-weight: 600;
 }
 .gallery .description {
   margin: 0;
@@ -561,13 +574,14 @@ width: 24px;
 }
 .about h2 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
   color: var(--text-dark);
   position: relative;
+  font-weight: 700;
 }
 .accordion-container {
-padding: 2rem;
+max-width: 1280px;
 }
 .accordion-item {
 margin-bottom: 1rem;
@@ -639,12 +653,12 @@ background-color: var(--light-color);
 }
 
 .section-title {
-text-align: center;
-margin-bottom: 1rem;
-font-size: 2rem;
-color: var(--text-dark);
-position: relative;
-font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  position: relative;
+  font-weight: 700;
 }
 
 .section-divider {
