@@ -67,10 +67,9 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1rem;
   position: relative;
   z-index: 2;
-  padding: 0 1rem;
 }
 
 /* Adding animated elements to enhance visual appeal */
