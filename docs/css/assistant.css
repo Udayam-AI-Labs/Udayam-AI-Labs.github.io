@@ -44,8 +44,8 @@
 
     #chat-widget {
         position: fixed;
-        bottom: 100px;
-        left: 25px;
+        bottom: 9rem;
+        right: 3rem;
         width: 350px;
         max-width: 90vw;
         height: 450px;
