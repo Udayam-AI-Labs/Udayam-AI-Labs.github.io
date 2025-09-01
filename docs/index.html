@@ -391,44 +391,28 @@
       <div class="footer-image">
         <img src="./assets/images/mascota.png" alt="">
       </div>
-      <form action="https://formsubmit.co/gsDuarte2024@outlook.com" class="contact-form" method="post" id="contact-form"
-        onsubmit="showAlert(event)">
-        <input type="text" placeholder="Full name" name="Name" class="nameinput" required>
-        <input type="email" name="Email" placeholder="yourmail@domain.com" class="emailinput" required>
-        <textarea name="Message" id="" cols="30" rows="10" placeholder="Message" class="messageinput"
-          required></textarea>
 
-        <input type="hidden" name="_subject" value="New Message from Udayam AI Labs Website">
-        <input type="hidden" name="_autoresponse" value="subject:Thank you from Udayam AI Labs||Dear {{Name}},
+      <!-- form contact -->
+      <form class="contact-form" id="contact-form">
+        <input type="text" placeholder="Full name" name="name" class="nameinput" required>
+        <input type="email" name="email" placeholder="yourmail@domain.com" class="emailinput" required>
+        <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="messageinput" required></textarea>
 
-          Thank you for contacting Udayam AI Labs! Your message is important to us. We'll get back to you as soon as possible.
-
-          Your message:
-          {{Message}}
-
-          Best regards,
-          Udayam AI Labs Team
-          support@udayam.co.in
-          +91-8600302429">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-
-        <input type="hidden" name="_next"
-          value="https://grace-silva.github.io/Udayam-AI-Labs.github.io/index.html#contact">
-
-        <button class="cta" id="submitBtn">Send Message</button>
-
+        <button class="cta" id="submitBtn" type="submit">Send Message</button>
+   
       </form>
 
-      <div class="contact-info">
-        <span class="footer-social">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:support@udayam.co.in" target="_blank">support@udayam.co.in</a>
-        </span>
-        <span class="footer-social">
-          <i class="fa-brands fa-whatsapp"></i>
-          <a href="https://wa.me/918600302429?text=Hello%20Udayam%20AI%20Labs,%20I%20need%20information%20about..."
-            target="_blank">+91-8600302429</a>
+      <!-- contact info and social media icons -->
+       <div class="contact-info">
+        <!-- email -->
+         <span class="footer-social info">
+           <i class="fas fa-envelope"></i>
+           <a href="mailto:support@udayam.co.in" target="_blank">support@udayam.co.in</a>
+         </span>
+        <!-- phone -->
+        <span class="footer-social info">
+        <i class="fa-brands fa-whatsapp"></i>            
+        <a href="https://wa.me/918600302429?text=Hello%20Udayam%20AI%20Labs,%20I%20need%20information%20about..." target="_blank">+91-8600302429</a>
         </span>
         <section class="footer-social">
           <span>Follow us</span>
@@ -491,14 +475,13 @@
       </div>
   </div>
 
-
   <button id="btnUp" class="upButton" title="Go Up">
     <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
-  </button>
-  
- 
-
-  <script src="js/script.js" defer></script>
+ </button>
+  <!-- Scripts -->
+ <script src="js/script.js" defer></script>
+  <!-- email js -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="js/assistant.js" defer></script>
 
 </body>
