@@ -10,8 +10,8 @@
 
     #chat-toggle {
         position: fixed;
-        bottom: 5rem;
-        right: 1rem;
+        bottom: 25px;
+        left: 25px;
         width: 60px;
         height: 60px;
         background: var(--gradient-primary);
@@ -44,8 +44,8 @@
 
     #chat-widget {
         position: fixed;
-        bottom: 9rem;
-        right: 2rem;
+        bottom: 100px;
+        left: 25px;
         width: 350px;
         max-width: 90vw;
         height: 450px;
@@ -172,11 +172,3 @@
     #chat-send-btn:hover { background: var(--secondary-color); transform: scale(1.1); }
     #chat-send-btn:active { transform: scale(0.95); transition: transform 0.1s ease; }
 
-
-@media (max-width: 480px) {
-   
-    #chat-toggle {
-        width: 50px;
-        height: 50px;
-    }
-}
