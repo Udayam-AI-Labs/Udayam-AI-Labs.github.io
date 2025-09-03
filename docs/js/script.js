@@ -69,7 +69,7 @@ const cardData = [
   alt: "Corporate Trainings Img"
   },
   title: "Corporate Trainings",
-  description: "Professioanls enchancing thier AI skills in an interactive setting.",
+  description: "Professionals enchancing their AI skills in an interactive setting.",
   reviewer: {
     comment: "\"The corporate training by Udayam AI Labs was highly engaging and practical. Mr. Udayraj Patare delivered complex AI concepts with clarity, real-world examples, and hands-on activities. Our team walked away with future-ready skills that we can apply immediately in our work.\"",
     name: "MR.TEJAS INAGALE",

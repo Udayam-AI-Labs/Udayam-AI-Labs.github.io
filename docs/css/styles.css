@@ -17,6 +17,7 @@
   --gradient-mix: radial-gradient(circle, var(--primary-color) 15%, var(--secondary-color) 100%);
   --gradient-header: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   --gradient-dark: linear-gradient(135deg, var(--dark-color) 0%, #444 100%);
+  --aurora: linear-gradient(135deg,rgba(29, 146, 217, 0.85) 0%, rgba(71, 63, 197, 0.85) 71%);
 }
 
 
@@ -308,15 +309,6 @@ header{
   position: relative;
 }
 
-.services h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-  color: var(--text-dark);
-  position: relative;
-  font-weight: 700;
-}
-
 .service-underline {
   width: 100px;
   height: 4px;
@@ -343,6 +335,7 @@ header{
   position: relative;
   overflow: hidden;
   z-index: 1;
+  cursor: pointer;
 }
 
 .service-card:hover {
@@ -370,7 +363,7 @@ header{
   font-size: 3rem;
   margin-bottom: 1.5rem;
   display: inline-block;
-  background: var(--gradient-primary);
+  background: var(--aurora);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /*animation: pulse 3s infinite ease-in-out;*/
@@ -407,13 +400,7 @@ header{
   color: var(--text-dark);
   position: relative;
 }     
-.training-underline{
-  width: 100px;
-  height: 4px;
-  background: var(--gradient-primary);
-  margin: 0 auto 3rem;
-  border-radius: 2px;
-}
+
 .training-highlights .card {
   display: flex;
   max-width: 1200px;
@@ -548,22 +535,8 @@ width: 24px;
 .about .container{
   padding: 0 1rem;
 }
-.about-underline{
-  width: 100px;
-  height: 4px;
-  background: var(--gradient-primary);
-  margin: 0 auto 3rem;
-  border-radius: 2px;
-}
-.about h2 {
 
-      text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: var(--text-dark);
-    position: relative;
-    font-weight: 700;
-}
+
 .accordion-container {
 padding: 2rem;
 }
@@ -642,7 +615,7 @@ margin-bottom: 1rem;
 font-size: 2rem;
 color: var(--text-dark);
 position: relative;
-font-weight: 700;
+font-weight: 600;
 }
 
 .section-divider {
@@ -720,6 +693,7 @@ flex: 0 1 240px;
   font-size: 1.4rem;
   margin-top: 1rem;
   color: var(--text-dark);
+  font-weight: 500;
 }
 
 .team-social{
