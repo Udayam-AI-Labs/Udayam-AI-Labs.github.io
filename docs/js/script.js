@@ -268,7 +268,7 @@ const delay = 1000;
       // We initially attempted to send the form (without the user noticing):
       try{
         // const response = await emailjs.sendForm('service_ID', 'template_ID', form data);
-        const response = await emailjs.sendForm('service_hyjqhbc', 'template_z994w15BORRAME', formData);
+        const response = await emailjs.sendForm('service_hyjqhbc', 'template_z994w15', formData);
         return response;
       }
       // If the delivery fails, start using the retry counter (1 successful delivery + 2 additional attempts):
