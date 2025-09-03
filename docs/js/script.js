@@ -257,7 +257,7 @@ window.addEventListener('scroll', function () {
 
 /* starts send emails function with EmailJS: */
 // Inicialite emailJS:
-emailjs.init("9QTiwXB7EElSgyWrN"); // public key
+emailjs.init("r8071XjnXsbmJjqpz"); // public key
 
 // Variables to manage the number of submission attempts for the form and a delay while checking:
 const maxRetries = 2;
@@ -268,7 +268,7 @@ const delay = 1000;
       // We initially attempted to send the form (without the user noticing):
       try{
         // const response = await emailjs.sendForm('service_ID', 'template_ID', form data);
-        const response = await emailjs.sendForm('service_hyjqhbc', 'template_z994w15', formData);
+        const response = await emailjs.sendForm('service_1gtj9qj', 'template_z994w15', formData);
         return response;
       }
       // If the delivery fails, start using the retry counter (1 successful delivery + 2 additional attempts):
@@ -305,12 +305,12 @@ const delay = 1000;
         try{
           const response = await sendEmailWithRetry(form); // check that there are no errors
           console.log("success", response.status, response.text);
-          alert("Your message was sent!!");
+          alert("Your message was sent successfully!!");
           form.reset(); // clean all input fields
 
             // If the email is sent successfully, redirect to the home page:
             setTimeout(() => {
-              window.location.href = "https://grace-silva.github.io/Udayam-AI-Labs.github.io/index.html#contact";
+              window.location.href = "https://udayam.co.in/index.html#contact";
             }, 1000);
         }
         // show error messages
