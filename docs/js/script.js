@@ -257,58 +257,91 @@ window.addEventListener('scroll', function () {
 
 /* starts send emails function with EmailJS: */
 // Inicialite emailJS:
-emailjs.init("9QTiwXB7EElSgyWrN");
+emailjs.init("r8071XjnXsbmJjqpz"); // public key
 
-function showAlert(event) {
-  event.preventDefault(); // website will not reload
-    
-    const submitBtn = document.getElementById("submitBtn");
-    const originalText = submitBtn.innerHTML;
-    
-      // sending animation in the submit button:
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-        submitBtn.classList.add('loading');
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = "0.5";
-        submitBtn.style.pointerEvents = "none";
-        submitBtn.style.cursor = "not-allowed";
+// Variables to manage the number of submission attempts for the form and a delay while checking:
+const maxRetries = 2;
+const delay = 1000;
 
-    // Send with EmailJS:
-    emailjs.sendForm('service_hyjqhbc', 'template_z994w15', event.target)
-      .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        // Show alert:
-        alert("Your message will be sent. We'll get back to you as soon as possible.");
-        
-        // Reset form
-        event.target.reset();
-        
-        // Redirect to home page
-        setTimeout(() => {
-          window.location.href = "https://grace-silva.github.io/Udayam-AI-Labs.github.io/index.html#contact";
-        }, 1000);
-
+  // Use the above counters to assist in debugging errors:
+  async function sendEmailWithRetry(formData, retries = maxRetries) {
+      // We initially attempted to send the form (without the user noticing):
+      try{
+        // const response = await emailjs.sendForm('service_ID', 'template_ID', form data);
+        const response = await emailjs.sendForm('service_1gtj9qj', 'template_uk7gybo', formData);
         return response;
-        })
+      }
+      // If the delivery fails, start using the retry counter (1 successful delivery + 2 additional attempts):
+      catch(error){
+        if(retries>0){
+          console.log("Reintentando envío... (${maxRetries - retries + 1} / ${maxRetries})");
+          // count 1 second before attempting another send attempt:
+          await new Promise(resolve => setTimeout(resolve, delay));
+          return sendEmailWithRetry(formData, retries - 1); 
+        }
+        //
+        throw error; // if resending attempts fail, a message is displayed to users
+      }
+      //------
+  }
+ 
+  /* send email without retries or errors */
+  async function showAlert(event) {
 
-        .catch(function(error) {
-          console.log('FAILED...', error);
-          alert("Sorry, there was an error sending your message. Please try again.");
-        })
-        .finally(function() {
-          // Restore original styles to the button submit:
-          setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = "1";
-            submitBtn.style.pointerEvents = "auto";
-            submitBtn.style.cursor = "pointer";
-            submitBtn.classList.remove("loading");
-          }, 500);
-        });
-    
-  return false;
-}
+    event.preventDefault(); // website will not reload, post method blocked
+      
+      const submitBtn = document.getElementById("submitBtn"); // cta button
+      const originalText = submitBtn.innerHTML; // cta inner text
+      const form = event.target; // get form data
+
+        // "sending" animation in the submit button:
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+          submitBtn.classList.add('loading');
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = "0.5";
+          submitBtn.style.pointerEvents = "none";
+          submitBtn.style.cursor = "not-allowed";
+        //
+        try{
+          const response = await sendEmailWithRetry(form); // check that there are no errors
+          console.log("success", response.status, response.text);
+          alert("Your message was sent successfully!!");
+          form.reset(); // clean all input fields
+
+            // If the email is sent successfully, redirect to the home page:
+            setTimeout(() => {
+              window.location.href = "https://udayam.co.in/index.html#contact";
+            }, 1000);
+        }
+        // show error messages
+        catch(error){
+          console.log("failed", error);
+          let errorMessage = "Sorry, there was an error sending your message. ";
+          
+          if (error?.status === 0 || error?.toString().includes('Network')) {
+              errorMessage += "Please check your internet connection and try again.";
+          } else if (error?.status >= 500) {
+              errorMessage += "Our server is having issues. Please try again in a few minutes.";
+          } else {
+              errorMessage += "Please try again or contact us directly at support@udayam.co.in";
+          }
+          
+          alert(errorMessage);
+        }
+          finally{
+            // Restore original styles to the button submit (in case of success or error):
+            setTimeout(() => {
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+              submitBtn.style.opacity = "1";
+              submitBtn.style.pointerEvents = "auto";
+              submitBtn.style.cursor = "pointer";
+              submitBtn.classList.remove("loading");
+            }, 500);
+          }
+
+    return false;
+  }
 
 document.getElementById('contact-form').addEventListener('submit', showAlert);
 /* ends send emails function */
